@@ -81,3 +81,20 @@
     padding: $spacing-3 $spacing-4;
   }
 }
+
+.langSwitch {
+  background: none;
+  border: 1px solid $border;
+  color: $text-muted;
+  border-radius: $radius-md;
+  padding: $spacing-1 $spacing-3;
+  font-size: $font-sm;
+  font-weight: $font-semibold;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: $accent;
+    color: $accent;
+  }
+}

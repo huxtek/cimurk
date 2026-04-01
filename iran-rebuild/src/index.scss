@@ -108,3 +108,10 @@ a {
   padding: $spacing-16 0;
   font-size: $font-md;
 }
+
+// ---- RTL Support ----
+[dir="rtl"] {
+  body {
+    font-family: "Vazirmatn", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}

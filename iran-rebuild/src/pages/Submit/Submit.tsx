@@ -1,13 +1,17 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useProjects } from "../../context/ProjectContext";
+import { useLocalizedPath } from "../../hooks/useLocalizedPath";
 import { CATEGORIES, STAGES, TIMELINES, BUDGETS } from "../../types";
 import styles from "./Submit.module.scss";
 
 export default function Submit() {
   const { addProject } = useProjects();
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  const lp = useLocalizedPath();
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -28,34 +32,34 @@ export default function Submit() {
       budget,
       author: author.trim() || undefined,
     });
-    navigate("/");
+    navigate(lp("/"));
   }
 
   return (
     <section className={styles.section}>
-      <h2>Submit a Project</h2>
-      <p className={styles.sub}>Share your vision for a free and rebuilt Iran.</p>
+      <h2>{t("Submit_Title")}</h2>
+      <p className={styles.sub}>{t("Submit_Subtitle")}</p>
 
       <form onSubmit={handleSubmit} className={styles.form}>
         <label>
-          Title *
-          <input type="text" required value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Project title" />
+          {t("Submit_FieldTitle")}
+          <input type="text" required value={title} onChange={(e) => setTitle(e.target.value)} placeholder={t("Submit_PlaceholderTitle")} />
         </label>
 
         <label>
-          Description *
-          <textarea required rows={4} value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Describe the project, its goals, and impact" />
+          {t("Submit_FieldDescription")}
+          <textarea required rows={4} value={description} onChange={(e) => setDescription(e.target.value)} placeholder={t("Submit_PlaceholderDescription")} />
         </label>
 
         <div className={styles.row}>
           <label>
-            Category *
+            {t("Submit_FieldCategory")}
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
               {CATEGORIES.map((c) => (<option key={c} value={c}>{c}</option>))}
             </select>
           </label>
           <label>
-            Stage *
+            {t("Submit_FieldStage")}
             <select value={stage} onChange={(e) => setStage(e.target.value)}>
               {STAGES.map((s) => (<option key={s} value={s}>{s}</option>))}
             </select>
@@ -64,13 +68,13 @@ export default function Submit() {
 
         <div className={styles.row}>
           <label>
-            Estimated Timeline *
+            {t("Submit_FieldTimeline")}
             <select value={timeline} onChange={(e) => setTimeline(e.target.value)}>
-              {TIMELINES.map((t) => (<option key={t} value={t}>{t}</option>))}
+              {TIMELINES.map((tt) => (<option key={tt} value={tt}>{tt}</option>))}
             </select>
           </label>
           <label>
-            Estimated Budget *
+            {t("Submit_FieldBudget")}
             <select value={budget} onChange={(e) => setBudget(e.target.value)}>
               {BUDGETS.map((b) => (<option key={b} value={b}>{b}</option>))}
             </select>
@@ -78,12 +82,12 @@ export default function Submit() {
         </div>
 
         <label>
-          Your Name (optional)
-          <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Anonymous if left blank" />
+          {t("Submit_FieldAuthor")}
+          <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} placeholder={t("Submit_PlaceholderAuthor")} />
         </label>
 
         <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-          Submit Project
+          {t("Submit_Button")}
         </button>
       </form>
     </section>

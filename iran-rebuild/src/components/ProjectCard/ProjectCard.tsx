@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import type { Project } from "../../types";
 import { useProjects } from "../../context/ProjectContext";
+import { useLocalizedPath } from "../../hooks/useLocalizedPath";
 import styles from "./ProjectCard.module.scss";
 
 interface Props {
@@ -11,15 +12,16 @@ interface Props {
 export default function ProjectCard({ project, variant = "full" }: Props) {
   const { vote, userVotes } = useProjects();
   const navigate = useNavigate();
+  const lp = useLocalizedPath();
   const userVote = userVotes[project.id] || 0;
 
   return (
     <div
       className={styles.card}
-      onClick={() => navigate(`/projects/${project.id}`)}
+      onClick={() => navigate(lp(`/projects/${project.id}`))}
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => e.key === "Enter" && navigate(`/projects/${project.id}`)}
+      onKeyDown={(e) => e.key === "Enter" && navigate(lp(`/projects/${project.id}`))}
     >
       <div className={styles.vote}>
         {variant === "full" ? (

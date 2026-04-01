@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import { ProjectProvider } from "../context/ProjectContext";
 import { CommentProvider } from "../context/CommentContext";
@@ -15,7 +15,10 @@ export function renderWithProviders(ui: ReactNode, { route = "/" }: Options = {}
       <AuthProvider>
         <ProjectProvider>
           <CommentProvider>
-            {ui}
+            <Routes>
+              <Route path="/fa/*" element={ui} />
+              <Route path="/*" element={ui} />
+            </Routes>
           </CommentProvider>
         </ProjectProvider>
       </AuthProvider>

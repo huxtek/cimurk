@@ -1,10 +1,13 @@
+import { useTranslation } from "react-i18next";
 import styles from "./Legal.module.scss";
 
 export default function Terms() {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.page}>
-      <h1>Terms and Conditions</h1>
-      <p className={styles.updated}>Last updated: April 1, 2026</p>
+      <h1>{t("Terms_Title")}</h1>
+      <p className={styles.updated}>{t("Terms_Updated")}</p>
 
       <p>
         Welcome to Cimurk. By accessing or using this platform, you agree to be
@@ -13,184 +16,75 @@ export default function Terms() {
       </p>
 
       <h2>1. Definitions</h2>
-      <p>
-        "Platform" refers to the Cimurk website and all associated services.
-        "User" refers to any individual who accesses or uses the Platform.
-        "Content" refers to any text, data, projects, comments, votes, or other
-        materials submitted by Users. "We", "Us", and "Our" refer to Cimurk and
-        its operators.
-      </p>
+      <p>"Platform" refers to the Cimurk website and all associated services. "User" refers to any individual who accesses or uses the Platform. "Content" refers to any text, data, projects, comments, votes, or other materials submitted by Users. "We", "Us", and "Our" refer to Cimurk and its operators.</p>
 
       <h2>2. Eligibility</h2>
-      <p>
-        You must be at least 13 years of age to use this Platform. By using the
-        Platform, you represent and warrant that you meet this age requirement
-        and have the legal capacity to enter into these Terms.
-      </p>
+      <p>You must be at least 13 years of age to use this Platform. By using the Platform, you represent and warrant that you meet this age requirement and have the legal capacity to enter into these Terms.</p>
 
       <h2>3. Account and Authentication</h2>
-      <p>
-        Certain features, such as posting comments, require authentication via
-        Google Sign-In. You are responsible for maintaining the security of your
-        account credentials. You agree not to impersonate any person or entity
-        or misrepresent your identity.
-      </p>
+      <p>Certain features, such as posting comments, require authentication via Google Sign-In. You are responsible for maintaining the security of your account credentials. You agree not to impersonate any person or entity or misrepresent your identity.</p>
 
       <h2>4. User-Submitted Content</h2>
-      <p>
-        Users may submit projects, comments, and votes. By submitting Content,
-        you grant Cimurk a non-exclusive, worldwide, royalty-free license to
-        display, distribute, and promote your Content on the Platform. You
-        retain ownership of your Content.
-      </p>
+      <p>Users may submit projects, comments, and votes. By submitting Content, you grant Cimurk a non-exclusive, worldwide, royalty-free license to display, distribute, and promote your Content on the Platform. You retain ownership of your Content.</p>
       <p>You represent and warrant that:</p>
       <ul>
         <li>You own or have the right to submit the Content.</li>
-        <li>
-          Your Content does not infringe on the intellectual property, privacy,
-          or other rights of any third party.
-        </li>
-        <li>
-          Your Content does not contain unlawful, threatening, abusive,
-          defamatory, or otherwise objectionable material.
-        </li>
+        <li>Your Content does not infringe on the intellectual property, privacy, or other rights of any third party.</li>
+        <li>Your Content does not contain unlawful, threatening, abusive, defamatory, or otherwise objectionable material.</li>
       </ul>
 
       <h2>5. Prohibited Conduct</h2>
       <p>You agree not to:</p>
       <ul>
-        <li>
-          Submit false, misleading, or fraudulent project proposals or
-          information.
-        </li>
-        <li>
-          Use the Platform to promote violence, hatred, discrimination, or
-          illegal activities.
-        </li>
-        <li>
-          Attempt to manipulate voting through automated means, multiple
-          accounts, or coordinated inauthentic behavior.
-        </li>
-        <li>
-          Interfere with or disrupt the Platform's infrastructure or security.
-        </li>
+        <li>Submit false, misleading, or fraudulent project proposals or information.</li>
+        <li>Use the Platform to promote violence, hatred, discrimination, or illegal activities.</li>
+        <li>Attempt to manipulate voting through automated means, multiple accounts, or coordinated inauthentic behavior.</li>
+        <li>Interfere with or disrupt the Platform's infrastructure or security.</li>
         <li>Harvest or collect User data without consent.</li>
         <li>Use the Platform for commercial solicitation or spam.</li>
       </ul>
 
       <h2>6. Intellectual Property</h2>
-      <p>
-        The Platform's design, branding, code, and original content are the
-        property of Cimurk and are protected by applicable intellectual property
-        laws. You may not reproduce, modify, or distribute any part of the
-        Platform without prior written consent.
-      </p>
+      <p>The Platform's design, branding, code, and original content are the property of Cimurk and are protected by applicable intellectual property laws. You may not reproduce, modify, or distribute any part of the Platform without prior written consent.</p>
 
       <h2>7. Voting System</h2>
-      <p>
-        Each User is entitled to one vote (upvote or downvote) per project.
-        Votes are intended to reflect genuine community interest. Any attempt to
-        artificially inflate or deflate vote counts may result in account
-        suspension or removal of Content.
-      </p>
+      <p>Each User is entitled to one vote (upvote or downvote) per project. Votes are intended to reflect genuine community interest. Any attempt to artificially inflate or deflate vote counts may result in account suspension or removal of Content.</p>
 
       <h2>8. Project Submissions</h2>
-      <p>
-        Cimurk is a platform for sharing ideas and proposals. Submission of a
-        project does not constitute an endorsement, partnership, or commitment
-        by Cimurk. We do not verify the feasibility, legality, or accuracy of
-        submitted projects. Users should conduct their own due diligence before
-        acting on any project information.
-      </p>
+      <p>Cimurk is a platform for sharing ideas and proposals. Submission of a project does not constitute an endorsement, partnership, or commitment by Cimurk. We do not verify the feasibility, legality, or accuracy of submitted projects. Users should conduct their own due diligence before acting on any project information.</p>
 
       <h2>9. No Financial or Legal Advice</h2>
-      <p>
-        Budget estimates, timelines, and other project details are
-        user-submitted and for informational purposes only. Nothing on this
-        Platform constitutes financial, legal, investment, or professional
-        advice. Consult qualified professionals before making decisions based on
-        Content found here.
-      </p>
+      <p>Budget estimates, timelines, and other project details are user-submitted and for informational purposes only. Nothing on this Platform constitutes financial, legal, investment, or professional advice. Consult qualified professionals before making decisions based on Content found here.</p>
 
       <h2>10. Content Moderation</h2>
-      <p>
-        We reserve the right to remove, edit, or refuse any Content that
-        violates these Terms or that we deem inappropriate, at our sole
-        discretion and without prior notice. We are not obligated to monitor all
-        Content but may do so at our discretion.
-      </p>
+      <p>We reserve the right to remove, edit, or refuse any Content that violates these Terms or that we deem inappropriate, at our sole discretion and without prior notice. We are not obligated to monitor all Content but may do so at our discretion.</p>
 
       <h2>11. Disclaimer of Warranties</h2>
-      <p>
-        The Platform is provided "as is" and "as available" without warranties
-        of any kind, express or implied, including but not limited to warranties
-        of merchantability, fitness for a particular purpose, and
-        non-infringement. We do not guarantee that the Platform will be
-        uninterrupted, error-free, or secure.
-      </p>
+      <p>The Platform is provided "as is" and "as available" without warranties of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not guarantee that the Platform will be uninterrupted, error-free, or secure.</p>
 
       <h2>12. Limitation of Liability</h2>
-      <p>
-        To the fullest extent permitted by law, Cimurk and its operators shall
-        not be liable for any indirect, incidental, special, consequential, or
-        punitive damages arising from your use of the Platform, including but
-        not limited to loss of data, revenue, or profits, even if advised of the
-        possibility of such damages.
-      </p>
+      <p>To the fullest extent permitted by law, Cimurk and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Platform, including but not limited to loss of data, revenue, or profits, even if advised of the possibility of such damages.</p>
 
       <h2>13. Indemnification</h2>
-      <p>
-        You agree to indemnify and hold harmless Cimurk and its operators from
-        any claims, damages, losses, or expenses (including legal fees) arising
-        from your use of the Platform, your Content, or your violation of these
-        Terms.
-      </p>
+      <p>You agree to indemnify and hold harmless Cimurk and its operators from any claims, damages, losses, or expenses (including legal fees) arising from your use of the Platform, your Content, or your violation of these Terms.</p>
 
       <h2>14. Third-Party Services</h2>
-      <p>
-        The Platform may integrate with third-party services such as Google
-        Authentication. Your use of such services is subject to their respective
-        terms and privacy policies. We are not responsible for the practices of
-        third-party services.
-      </p>
+      <p>The Platform may integrate with third-party services such as Google Authentication. Your use of such services is subject to their respective terms and privacy policies. We are not responsible for the practices of third-party services.</p>
 
       <h2>15. Modifications to Terms</h2>
-      <p>
-        We reserve the right to modify these Terms at any time. Changes will be
-        posted on this page with an updated "Last updated" date. Continued use
-        of the Platform after changes constitutes acceptance of the revised
-        Terms.
-      </p>
+      <p>We reserve the right to modify these Terms at any time. Changes will be posted on this page with an updated "Last updated" date. Continued use of the Platform after changes constitutes acceptance of the revised Terms.</p>
 
       <h2>16. Termination</h2>
-      <p>
-        We may suspend or terminate your access to the Platform at any time, for
-        any reason, without notice. Upon termination, your right to use the
-        Platform ceases immediately. Provisions that by their nature should
-        survive termination shall remain in effect.
-      </p>
+      <p>We may suspend or terminate your access to the Platform at any time, for any reason, without notice. Upon termination, your right to use the Platform ceases immediately. Provisions that by their nature should survive termination shall remain in effect.</p>
 
       <h2>17. Governing Law</h2>
-      <p>
-        These Terms shall be governed by and construed in accordance with
-        applicable laws, without regard to conflict of law principles. Any
-        disputes arising from these Terms shall be resolved through good-faith
-        negotiation or, if necessary, binding arbitration.
-      </p>
+      <p>These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles. Any disputes arising from these Terms shall be resolved through good-faith negotiation or, if necessary, binding arbitration.</p>
 
       <h2>18. Severability</h2>
-      <p>
-        If any provision of these Terms is found to be unenforceable or invalid,
-        that provision shall be limited or eliminated to the minimum extent
-        necessary, and the remaining provisions shall remain in full force and
-        effect.
-      </p>
+      <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
 
       <h2>19. Contact</h2>
-      <p>
-        If you have questions about these Terms, please reach out to us through
-        our social media channels or the Platform's contact mechanisms.
-      </p>
+      <p>If you have questions about these Terms, please reach out to us through our social media channels or the Platform's contact mechanisms.</p>
     </section>
   );
 }

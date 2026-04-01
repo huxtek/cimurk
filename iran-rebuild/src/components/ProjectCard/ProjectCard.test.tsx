@@ -68,7 +68,7 @@ describe("ProjectCard", () => {
   it("navigates on Enter key", async () => {
     const user = userEvent.setup();
     renderWithProviders(<ProjectCard project={mockProject} />);
-    const card = screen.getByText("Test Project").closest("[role='button']")!;
+    const card = screen.getByText("Test Project").closest("[role='button']") as HTMLElement;
     card.focus();
     await user.keyboard("{Enter}");
   });

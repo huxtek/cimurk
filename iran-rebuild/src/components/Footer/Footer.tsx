@@ -1,12 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { getLangFromPath } from "../LanguageLayout/LanguageLayout";
 import styles from "./Footer.module.scss";
 
 export default function Footer() {
+  const { t } = useTranslation();
+  const { pathname } = useLocation();
+  const currentLang = getLangFromPath(pathname);
+  const isFarsi = currentLang === "fa";
+  const lp = (path: string) =>
+    isFarsi ? `/fa${path === "/" ? "" : path}` : path;
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.top}>
-          <Link to="/" className={styles.logo}>Cimurk</Link>
+          <Link to={lp("/")} className={styles.logo}>{t("Footer_Brand")}</Link>
           <div className={styles.social}>
             <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -21,11 +30,11 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.bottom}>
-          <span className={styles.copy}>© {new Date().getFullYear()} Cimurk. All rights reserved.</span>
+          <span className={styles.copy}>© {new Date().getFullYear()} {t("Footer_Copyright")}</span>
           <div className={styles.legal}>
-            <Link to="/terms">Terms & Conditions</Link>
+            <Link to={lp("/terms")}>{t("Footer_Terms")}</Link>
             <span className={styles.dot}>·</span>
-            <Link to="/privacy">Privacy Policy</Link>
+            <Link to={lp("/privacy")}>{t("Footer_Privacy")}</Link>
           </div>
         </div>
       </div>

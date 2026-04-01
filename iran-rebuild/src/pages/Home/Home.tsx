@@ -1,12 +1,16 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useProjects } from "../../context/ProjectContext";
 import ProjectCard from "../../components/ProjectCard";
+import { useLocalizedPath } from "../../hooks/useLocalizedPath";
 import { CATEGORIES } from "../../types";
 import styles from "./Home.module.scss";
 
 export default function Home() {
   const { projects } = useProjects();
+  const { t } = useTranslation();
+  const lp = useLocalizedPath();
 
   const top3 = useMemo(
     () => [...projects].sort((a, b) => b.votes - a.votes).slice(0, 3),
@@ -18,49 +22,46 @@ export default function Home() {
   return (
     <>
       <section className={styles.hero}>
-        <p className={styles.label}>Building Together</p>
+        <p className={styles.label}>{t("Home_Label")}</p>
         <h1>
-          Building a Free Iran <span className={styles.accent}>Together</span>
+          {t("Home_Title")} <span className={styles.accent}>{t("Home_TitleAccent")}</span>
         </h1>
-        <p className={styles.sub}>
-          A platform to share, discover, and vote on projects — from freedom
-          activism to civil infrastructure — that will shape Iran's future.
-        </p>
+        <p className={styles.sub}>{t("Home_Subtitle")}</p>
         <div className={styles.actions}>
-          <Link to="/projects" className="btn btn-primary">
-            Explore Projects
+          <Link to={lp("/projects")} className="btn btn-primary">
+            {t("Home_ExploreProjects")}
           </Link>
-          <Link to="/submit" className="btn btn-outline">
-            Submit Your Idea
+          <Link to={lp("/submit")} className="btn btn-outline">
+            {t("Home_SubmitIdea")}
           </Link>
         </div>
         <div className={styles.stats}>
           <div className={styles.stat}>
             <span className={styles.statNum}>{projects.length}</span>
-            <span className={styles.statLabel}>Projects</span>
+            <span className={styles.statLabel}>{t("Home_StatProjects")}</span>
           </div>
           <div className={styles.stat}>
             <span className={styles.statNum}>{totalVotes}</span>
-            <span className={styles.statLabel}>Total Votes</span>
+            <span className={styles.statLabel}>{t("Home_StatVotes")}</span>
           </div>
           <div className={styles.stat}>
             <span className={styles.statNum}>{CATEGORIES.length}</span>
-            <span className={styles.statLabel}>Categories</span>
+            <span className={styles.statLabel}>{t("Home_StatCategories")}</span>
           </div>
         </div>
       </section>
 
       <section className={styles.topProjects}>
-        <h2>Top Projects</h2>
-        <p className={styles.sectionSub}>Highest voted ideas from the community</p>
+        <h2>{t("Home_TopProjects")}</h2>
+        <p className={styles.sectionSub}>{t("Home_TopProjectsSub")}</p>
         <div className={styles.list}>
           {top3.map((p) => (
             <ProjectCard key={p.id} project={p} variant="preview" />
           ))}
         </div>
         <div className={styles.seeAll}>
-          <Link to="/projects" className="btn btn-outline">
-            View All Projects →
+          <Link to={lp("/projects")} className="btn btn-outline">
+            {t("Home_ViewAll")}
           </Link>
         </div>
       </section>

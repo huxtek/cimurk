@@ -9,7 +9,7 @@ ComponentName/
   index.ts                  — barrel export
   ComponentName.tsx         — component implementation
   ComponentName.module.scss — scoped styles (SCSS Modules)
-  ComponentName.test.tsx    — tests (when added)
+  ComponentName.test.tsx    — tests
 ```
 
 - Components go in `src/components/`
@@ -50,6 +50,25 @@ ComponentName/
 
 - Shared utility functions go in `src/utils/`
 - One function per file when possible
+
+## Internationalization (i18n)
+
+- NEVER hardcode any user-facing text in JSX — all text must go through `t()` from `react-i18next`
+- When adding any new text, you MUST add the key to both `src/i18n/en.ts` and `src/i18n/fa.ts`
+- Uses `react-i18next` with centralized translation files in `src/i18n/`
+- Translation files: `src/i18n/en.ts` (English), `src/i18n/fa.ts` (Farsi)
+- i18n is initialized in `src/i18n/index.ts` and imported in `main.tsx`
+- Use flat key naming: `ComponentName_KeyName` (e.g. `Home_Title`, `Navbar_Brand`)
+- Keys are grouped by component/page with a comment header (e.g. `// Home`, `// Navbar`)
+- In components, use `const { t } = useTranslation()` and reference as `t("Home_Title")`
+- Exception: static legal body text (paragraphs, list items) can stay inline
+- English routes have no prefix (`/projects`, `/submit`, `/terms`)
+- Farsi routes use `/fa` prefix (`/fa/projects`, `/fa/submit`, `/fa/terms`)
+- Root `/` serves English by default — no redirect needed
+- Use `useLocalizedPath()` hook for building links inside `/:lang` routes
+- For components outside `/:lang` routes (Navbar, Footer), extract lang from pathname directly
+- Farsi activates RTL layout via `dir="rtl"` on `<html>`
+- `LanguageLayout` component reads the `:lang` param and sets i18n language + document direction
 
 ## Routing
 

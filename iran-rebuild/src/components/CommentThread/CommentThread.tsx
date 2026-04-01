@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { useComments } from "../../context/CommentContext";
 import { useAuth } from "../../context/AuthContext";
+import { useTranslation } from "react-i18next";
 import CommentItem from "../CommentItem";
 import styles from "./CommentThread.module.scss";
 
@@ -11,6 +12,7 @@ interface Props {
 export default function CommentThread({ projectId }: Props) {
   const { comments, addComment } = useComments();
   const { user, signIn } = useAuth();
+  const { t } = useTranslation();
   const [text, setText] = useState("");
 
   const projectComments = useMemo(
@@ -34,7 +36,7 @@ export default function CommentThread({ projectId }: Props) {
 
   return (
     <div className={styles.section}>
-      <h3>Discussion ({projectComments.length})</h3>
+      <h3>{t("CommentThread_Title")} ({projectComments.length})</h3>
 
       <div className={styles.form}>
         {user ? (
@@ -47,14 +49,14 @@ export default function CommentThread({ projectId }: Props) {
               rows={3}
               value={text}
               onChange={(e) => setText(e.target.value)}
-              placeholder="Join the discussion..."
+              placeholder={t("CommentThread_Placeholder")}
             />
             <button
               className="btn btn-primary"
               onClick={handleSubmit}
               disabled={!text.trim()}
             >
-              Post Comment
+              {t("CommentThread_PostButton")}
             </button>
           </>
         ) : (
@@ -65,7 +67,7 @@ export default function CommentThread({ projectId }: Props) {
               <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
               <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
             </svg>
-            Sign in with Google to comment
+            {t("CommentThread_SignIn")}
           </button>
         )}
       </div>

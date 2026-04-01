@@ -64,7 +64,8 @@ exports[`Footer > matches snapshot 1`] = `
       >
         © 
         2026
-         Cimurk. All rights reserved.
+         
+        Cimurk. All rights reserved.
       </span>
       <div
         class="legal"

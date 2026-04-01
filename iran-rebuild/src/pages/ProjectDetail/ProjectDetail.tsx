@@ -1,10 +1,14 @@
 import { useParams, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useProjects } from "../../context/ProjectContext";
 import CommentThread from "../../components/CommentThread";
+import { useLocalizedPath } from "../../hooks/useLocalizedPath";
 import styles from "./ProjectDetail.module.scss";
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
+  const { t } = useTranslation();
+  const lp = useLocalizedPath();
   const { projects, vote, userVotes } = useProjects();
   const project = projects.find((p) => p.id === id);
 
@@ -12,7 +16,7 @@ export default function ProjectDetail() {
     return (
       <section className={styles.section}>
         <p className={styles.empty}>
-          Project not found. <Link to="/projects">Browse all projects</Link>
+          {t("ProjectDetail_NotFound")} <Link to={lp("/projects")}>{t("ProjectDetail_BrowseAll")}</Link>
         </p>
       </section>
     );
@@ -22,7 +26,7 @@ export default function ProjectDetail() {
 
   return (
     <section className={styles.section}>
-      <Link to="/projects" className={styles.backLink}>← Back to Projects</Link>
+      <Link to={lp("/projects")} className={styles.backLink}>{t("ProjectDetail_Back")}</Link>
 
       <div className={styles.header}>
         <div className={styles.meta}>
@@ -35,7 +39,7 @@ export default function ProjectDetail() {
 
       <div className={styles.infoCard}>
         <div className={styles.row}>
-          <span className={styles.label}>Votes</span>
+          <span className={styles.label}>{t("ProjectDetail_Votes")}</span>
           <div className={styles.vote}>
             <button
               className={`${styles.voteBtn} ${styles.voteDown} ${userVote === -1 ? styles.votedDown : ""}`}
@@ -51,28 +55,28 @@ export default function ProjectDetail() {
           </div>
         </div>
         <div className={styles.row}>
-          <span className={styles.label}>Stage</span>
+          <span className={styles.label}>{t("ProjectDetail_Stage")}</span>
           <span>{project.stage}</span>
         </div>
         <div className={styles.row}>
-          <span className={styles.label}>Category</span>
+          <span className={styles.label}>{t("ProjectDetail_Category")}</span>
           <span>{project.category}</span>
         </div>
         <div className={styles.row}>
-          <span className={styles.label}>Timeline</span>
+          <span className={styles.label}>{t("ProjectDetail_Timeline")}</span>
           <span>{project.timeline}</span>
         </div>
         <div className={styles.row}>
-          <span className={styles.label}>Budget</span>
+          <span className={styles.label}>{t("ProjectDetail_Budget")}</span>
           <span>{project.budget}</span>
         </div>
         <div className={styles.row}>
-          <span className={styles.label}>Created</span>
+          <span className={styles.label}>{t("ProjectDetail_Created")}</span>
           <span>{project.createdAt}</span>
         </div>
         {project.author && (
           <div className={styles.row}>
-            <span className={styles.label}>Author</span>
+            <span className={styles.label}>{t("ProjectDetail_Author")}</span>
             <span>{project.author}</span>
           </div>
         )}

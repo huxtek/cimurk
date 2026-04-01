@@ -106,8 +106,7 @@ exports[`Privacy > matches snapshot 1`] = `
       Service providers: Third-party services that help us operate the Platform (e.g., hosting, analytics), bound by confidentiality agreements.
     </li>
     <li>
-      Authentication providers: Google, for the purpose of sign-in. Google's use of your data is governed by
-       
+      Authentication providers: Google, for the purpose of sign-in. Google's use of your data is governed by 
       <a
         href="https://policies.google.com/privacy"
         rel="noopener noreferrer"

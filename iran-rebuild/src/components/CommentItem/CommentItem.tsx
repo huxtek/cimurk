@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useComments } from "../../context/CommentContext";
 import { useAuth } from "../../context/AuthContext";
+import { useTranslation } from "react-i18next";
 import { getTimeAgo } from "../../utils/timeAgo";
 import type { Comment } from "../../types";
 import styles from "./CommentItem.module.scss";
@@ -15,6 +16,7 @@ interface Props {
 export default function CommentItem({ comment, allComments, projectId, depth }: Props) {
   const { addComment } = useComments();
   const { user, signIn } = useAuth();
+  const { t } = useTranslation();
   const [replying, setReplying] = useState(false);
   const [replyText, setReplyText] = useState("");
 
@@ -50,11 +52,11 @@ export default function CommentItem({ comment, allComments, projectId, depth }: 
       <div className={styles.actions}>
         {user ? (
           <button className={styles.replyBtn} onClick={() => setReplying(!replying)}>
-            {replying ? "Cancel" : "Reply"}
+            {replying ? t("CommentItem_Cancel") : t("CommentItem_Reply")}
           </button>
         ) : (
           <button className={styles.replyBtn} onClick={signIn}>
-            Sign in to reply
+            {t("CommentItem_SignInToReply")}
           </button>
         )}
       </div>
@@ -72,7 +74,7 @@ export default function CommentItem({ comment, allComments, projectId, depth }: 
             onClick={handleReply}
             disabled={!replyText.trim()}
           >
-            Reply
+            {t("CommentItem_ReplyButton")}
           </button>
         </div>
       )}
