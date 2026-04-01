@@ -1,18 +1,18 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
-import { ProjectProvider } from "./context/ProjectContext";
-import { CommentProvider } from "./context/CommentContext";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
+import { AuthProvider } from "../../context/AuthContext";
+import { ProjectProvider } from "../../context/ProjectContext";
+import { CommentProvider } from "../../context/CommentContext";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
+import ScrollToTop from "../ScrollToTop";
 
-const Home = lazy(() => import("./pages/Home"));
-const Projects = lazy(() => import("./pages/Projects"));
-const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
-const Submit = lazy(() => import("./pages/Submit"));
-const Terms = lazy(() => import("./pages/Terms"));
-const Privacy = lazy(() => import("./pages/Privacy"));
+const Home = lazy(() => import("../../pages/Home"));
+const Projects = lazy(() => import("../../pages/Projects"));
+const ProjectDetail = lazy(() => import("../../pages/ProjectDetail"));
+const Submit = lazy(() => import("../../pages/Submit"));
+const Terms = lazy(() => import("../../pages/Terms"));
+const Privacy = lazy(() => import("../../pages/Privacy"));
 
 export default function App() {
   return (
