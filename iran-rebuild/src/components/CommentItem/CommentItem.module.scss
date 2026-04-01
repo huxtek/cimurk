@@ -1,0 +1,92 @@
+@use "../../styles/variables" as *;
+
+.item {
+  padding: $spacing-4 0;
+  border-top: 1px solid $border;
+
+  &:first-child {
+    border-top: none;
+  }
+}
+
+.nested {
+  margin-left: $spacing-8;
+  border-left: 2px solid $border;
+  padding-left: $spacing-4;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  margin-bottom: $spacing-2;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.author {
+  font-size: $font-sm;
+  font-weight: $font-semibold;
+}
+
+.time {
+  font-size: 0.78rem;
+  color: $text-muted;
+}
+
+.text {
+  font-size: $font-base;
+  line-height: 1.5;
+  color: $text;
+  margin-bottom: $spacing-2;
+}
+
+.actions {
+  margin-bottom: $spacing-1;
+}
+
+.replyBtn {
+  background: none;
+  border: none;
+  color: $accent;
+  font-size: $font-sm;
+  cursor: pointer;
+  padding: 0;
+  font-weight: $font-medium;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.replyForm {
+  margin-top: $spacing-2;
+  margin-left: $spacing-8;
+
+  textarea {
+    width: 100%;
+    padding: $spacing-2 $spacing-3;
+    border-radius: $radius-md;
+    border: 1px solid $border;
+    background: $bg-card;
+    color: $text;
+    font-size: $font-sm;
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.2s;
+    margin-bottom: $spacing-2;
+
+    &:focus {
+      border-color: $accent;
+    }
+  }
+}
+
+.replies {
+  margin-top: $spacing-1;
+}

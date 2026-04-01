@@ -1,0 +1,57 @@
+@use "../../styles/variables" as *;
+
+.dropdown {
+  position: relative;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+}
+
+.chevron {
+  font-size: $font-sm;
+  transition: transform 0.2s;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + $spacing-2);
+  left: 0;
+  background: $bg-card;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  padding: $spacing-2 0;
+  min-width: 260px;
+  max-height: 360px;
+  overflow-y: auto;
+  z-index: 50;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  padding: $spacing-2 $spacing-4;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: $text;
+  transition: background 0.15s;
+
+  &:hover {
+    background: $bg-hover;
+  }
+
+  input[type="checkbox"] {
+    accent-color: $accent;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+}

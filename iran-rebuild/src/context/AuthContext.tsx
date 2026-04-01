@@ -1,11 +1,6 @@
 import { createContext, useContext, useState, useCallback } from "react";
 import type { ReactNode } from "react";
-
-interface User {
-  name: string;
-  email: string;
-  avatar: string;
-}
+import type { User } from "../types";
 
 interface AuthContextValue {
   user: User | null;

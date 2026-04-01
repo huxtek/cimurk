@@ -1,8 +1,10 @@
+import styles from "./Legal.module.scss";
+
 export default function Privacy() {
   return (
-    <section className="legal-page">
+    <section className={styles.page}>
       <h1>Privacy Policy</h1>
-      <p className="legal-updated">Last updated: April 1, 2026</p>
+      <p className={styles.updated}>Last updated: April 1, 2026</p>
 
       <p>
         Cimurk ("we", "us", "our") is committed to protecting your privacy.

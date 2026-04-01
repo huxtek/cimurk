@@ -1,9 +1,10 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { useProjects } from "../context/ProjectContext";
-import ProjectCard from "../components/ProjectCard";
-import CheckboxDropdown from "../components/CheckboxDropdown";
-import { CATEGORIES, TIMELINES, BUDGETS } from "../types";
+import { useProjects } from "../../context/ProjectContext";
+import ProjectCard from "../../components/ProjectCard";
+import CheckboxDropdown from "../../components/CheckboxDropdown";
+import { CATEGORIES, TIMELINES, BUDGETS } from "../../types";
+import styles from "./Projects.module.scss";
 
 export default function Projects() {
   const { projects } = useProjects();
@@ -23,40 +24,23 @@ export default function Projects() {
   }, [projects, selectedCategories, selectedTimelines, selectedBudgets]);
 
   return (
-    <section className="projects-section">
+    <section className={styles.section}>
       <h2>All Projects</h2>
-      <p className="section-sub">
-        Sorted by votes — discover, explore, and support
-      </p>
+      <p className={styles.sub}>Sorted by votes — discover, explore, and support</p>
 
-      <div className="filters-row">
-        <CheckboxDropdown
-          label="Categories"
-          options={CATEGORIES}
-          selected={selectedCategories}
-          onChange={setSelectedCategories}
-        />
-        <CheckboxDropdown
-          label="Timeline"
-          options={TIMELINES}
-          selected={selectedTimelines}
-          onChange={setSelectedTimelines}
-        />
-        <CheckboxDropdown
-          label="Budget"
-          options={BUDGETS}
-          selected={selectedBudgets}
-          onChange={setSelectedBudgets}
-        />
+      <div className={styles.filters}>
+        <CheckboxDropdown label="Categories" options={CATEGORIES} selected={selectedCategories} onChange={setSelectedCategories} />
+        <CheckboxDropdown label="Timeline" options={TIMELINES} selected={selectedTimelines} onChange={setSelectedTimelines} />
+        <CheckboxDropdown label="Budget" options={BUDGETS} selected={selectedBudgets} onChange={setSelectedBudgets} />
       </div>
 
       {filtered.length === 0 ? (
-        <p className="empty-state">
+        <p className={styles.empty}>
           No projects match your filters. Try adjusting them or{" "}
           <Link to="/submit">submit a new project</Link>!
         </p>
       ) : (
-        <div className="project-list">
+        <div className={styles.list}>
           {filtered.map((p) => (
             <ProjectCard key={p.id} project={p} />
           ))}

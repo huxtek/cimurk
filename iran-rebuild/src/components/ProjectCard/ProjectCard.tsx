@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import type { Project } from "../types";
-import { useProjects } from "../context/ProjectContext";
+import type { Project } from "../../types";
+import { useProjects } from "../../context/ProjectContext";
+import styles from "./ProjectCard.module.scss";
 
 interface Props {
   project: Project;
@@ -14,17 +15,17 @@ export default function ProjectCard({ project, variant = "full" }: Props) {
 
   return (
     <div
-      className="project-card clickable"
+      className={styles.card}
       onClick={() => navigate(`/projects/${project.id}`)}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && navigate(`/projects/${project.id}`)}
     >
-      <div className="card-vote">
+      <div className={styles.vote}>
         {variant === "full" ? (
           <>
             <button
-              className={userVote === 1 ? "voted-up" : ""}
+              className={`${styles.voteBtn} ${styles.voteUp} ${userVote === 1 ? styles.votedUp : ""}`}
               onClick={(e) => { e.stopPropagation(); vote(project.id, 1); }}
               aria-label="Upvote"
             >
@@ -32,7 +33,7 @@ export default function ProjectCard({ project, variant = "full" }: Props) {
             </button>
             <span className="vote-count">{project.votes}</span>
             <button
-              className={userVote === -1 ? "voted-down" : ""}
+              className={`${styles.voteBtn} ${styles.voteDown} ${userVote === -1 ? styles.votedDown : ""}`}
               onClick={(e) => { e.stopPropagation(); vote(project.id, -1); }}
               aria-label="Downvote"
             >
@@ -43,15 +44,15 @@ export default function ProjectCard({ project, variant = "full" }: Props) {
           <span className="vote-count">{project.votes}</span>
         )}
       </div>
-      <div className="card-body">
-        <div className="card-meta">
-          <span className="card-category">{project.category}</span>
-          <span className="card-stage">{project.stage}</span>
+      <div className={styles.body}>
+        <div className={styles.meta}>
+          <span className="tag-category">{project.category}</span>
+          <span className="tag-stage">{project.stage}</span>
         </div>
-        <h3 className="card-title">{project.title}</h3>
-        <p className="card-desc">{project.description}</p>
+        <h3 className={styles.title}>{project.title}</h3>
+        <p className={styles.desc}>{project.description}</p>
         {project.author && (
-          <span className="card-author">by {project.author}</span>
+          <span className={styles.author}>by {project.author}</span>
         )}
       </div>
     </div>

@@ -1,16 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
+import styles from "./Navbar.module.scss";
 
 export default function Navbar() {
   const { pathname } = useLocation();
   const { user, signIn, signOut } = useAuth();
 
   return (
-    <nav className="navbar">
-      <Link to="/" className="navbar-brand">
+    <nav className={styles.navbar}>
+      <Link to="/" className={styles.brand}>
         Cimurk
       </Link>
-      <div className="navbar-links">
+      <div className={styles.links}>
         <Link to="/" className={pathname === "/" ? "active" : ""}>
           Home
         </Link>
@@ -21,12 +22,12 @@ export default function Navbar() {
           + Submit
         </Link>
         {user ? (
-          <button className="nav-user" onClick={signOut}>
-            <img src={user.avatar} alt={user.name} className="nav-avatar" />
+          <button className={styles.user} onClick={signOut}>
+            <img src={user.avatar} alt={user.name} className={styles.avatar} />
             <span>{user.name}</span>
           </button>
         ) : (
-          <button className="nav-signin" onClick={signIn}>
+          <button className={styles.signIn} onClick={signIn}>
             Sign In
           </button>
         )}

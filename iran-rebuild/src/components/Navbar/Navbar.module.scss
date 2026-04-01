@@ -1,0 +1,83 @@
+@use "../../styles/variables" as *;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-4 $spacing-8;
+  border-bottom: 1px solid $border;
+  position: sticky;
+  top: 0;
+  background: rgba($bg, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+
+.brand {
+  font-size: $font-2xl;
+  font-weight: $font-bold;
+  color: $text;
+}
+
+.links {
+  display: flex;
+  gap: $spacing-6;
+  align-items: center;
+
+  a {
+    color: $text-muted;
+    font-size: $font-base;
+    transition: color 0.2s;
+
+    &:hover,
+    &.active {
+      color: $accent;
+    }
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  background: none;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  padding: $spacing-1 $spacing-3;
+  color: $text;
+  cursor: pointer;
+  font-size: $font-sm;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $accent;
+  }
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.signIn {
+  background: $accent;
+  color: #fff;
+  border: none;
+  border-radius: $radius-md;
+  padding: $spacing-2 $spacing-4;
+  font-size: $font-sm;
+  font-weight: $font-semibold;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: $accent-hover;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .navbar {
+    padding: $spacing-3 $spacing-4;
+  }
+}

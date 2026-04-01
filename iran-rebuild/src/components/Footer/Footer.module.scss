@@ -1,0 +1,89 @@
+@use "../../styles/variables" as *;
+
+.footer {
+  border-top: 1px solid $border;
+  margin-top: $spacing-16;
+  padding: $spacing-8 $spacing-8 $spacing-6;
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-6;
+}
+
+.logo {
+  font-size: $font-xl;
+  font-weight: $font-bold;
+  color: $text;
+}
+
+.social {
+  display: flex;
+  gap: $spacing-3;
+
+  a {
+    color: $text-muted;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: $radius-md;
+    border: 1px solid $border;
+    transition: all 0.2s;
+
+    &:hover {
+      color: $accent;
+      border-color: $accent;
+    }
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $spacing-4;
+  border-top: 1px solid $border;
+}
+
+.copy {
+  font-size: $font-sm;
+  color: $text-muted;
+}
+
+.legal {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+
+  a {
+    color: $text-muted;
+    font-size: $font-sm;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+.dot {
+  color: $text-muted;
+  font-size: $font-sm;
+}
+
+@media (max-width: $breakpoint-sm) {
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-2;
+  }
+}

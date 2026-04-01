@@ -1,0 +1,67 @@
+@use "../../styles/variables" as *;
+
+.section {
+  padding-top: $spacing-12;
+  max-width: $container-form;
+  margin: 0 auto;
+
+  h2 {
+    font-size: $font-4xl;
+    font-weight: $font-bold;
+  }
+}
+
+.sub {
+  color: $text-muted;
+  margin-bottom: $spacing-6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+  margin-top: $spacing-6;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+    font-size: $font-base;
+    color: $text-muted;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: $spacing-3 $spacing-4;
+    border-radius: $radius-md;
+    border: 1px solid $border;
+    background: $bg-card;
+    color: $text;
+    font-size: $font-md;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: $accent;
+    }
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-4;
+}
+
+.submitBtn {
+  align-self: flex-start;
+  margin-top: $spacing-2;
+}
+
+@media (max-width: $breakpoint-sm) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

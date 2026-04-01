@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import styles from "./CheckboxDropdown.module.scss";
 
 interface Props {
   label: string;
@@ -42,23 +43,23 @@ export default function CheckboxDropdown({ label, options, selected, onChange }:
     : `${label} (${selected.size})`;
 
   return (
-    <div className="filter-dropdown" ref={ref}>
+    <div className={styles.dropdown} ref={ref}>
       <button
-        className="btn btn-outline filter-toggle"
+        className={`btn btn-outline ${styles.toggle}`}
         onClick={() => setOpen((o) => !o)}
       >
         {buttonLabel}
-        <span className={`chevron ${open ? "open" : ""}`}>▾</span>
+        <span className={`${styles.chevron} ${open ? styles.chevronOpen : ""}`}>▾</span>
       </button>
 
       {open && (
-        <div className="filter-menu">
-          <label className="filter-option">
+        <div className={styles.menu}>
+          <label className={styles.option}>
             <input type="checkbox" checked={allSelected} onChange={toggleAll} />
             <span>All</span>
           </label>
           {options.map((opt) => (
-            <label key={opt} className="filter-option">
+            <label key={opt} className={styles.option}>
               <input
                 type="checkbox"
                 checked={selected.has(opt)}

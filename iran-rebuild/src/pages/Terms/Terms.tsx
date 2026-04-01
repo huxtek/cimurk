@@ -1,8 +1,10 @@
+import styles from "./Legal.module.scss";
+
 export default function Terms() {
   return (
-    <section className="legal-page">
+    <section className={styles.page}>
       <h1>Terms and Conditions</h1>
-      <p className="legal-updated">Last updated: April 1, 2026</p>
+      <p className={styles.updated}>Last updated: April 1, 2026</p>
 
       <p>
         Welcome to Cimurk. By accessing or using this platform, you agree to be
