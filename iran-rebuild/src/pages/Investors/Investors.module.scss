@@ -1,0 +1,91 @@
+@use "../../styles/variables" as *;
+
+.section {
+  padding-top: $spacing-10;
+
+  h2 {
+    font-size: $font-4xl;
+    font-weight: $font-bold;
+    letter-spacing: -0.01em;
+  }
+}
+
+.sub {
+  color: $text-muted;
+  margin-bottom: $spacing-10;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-6;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: $spacing-8 $spacing-6;
+  background: $bg-card;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  color: $text;
+  text-decoration: none;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: rgba($accent, 0.4);
+    transform: translateY(-3px);
+    box-shadow: $shadow-glow, $shadow-md;
+  }
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: $radius-lg;
+  margin-bottom: $spacing-4;
+}
+
+.name {
+  font-size: $font-xl;
+  font-weight: $font-semibold;
+  margin-bottom: $spacing-2;
+}
+
+.desc {
+  color: $text-muted;
+  font-size: $font-sm;
+  line-height: 1.6;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.footer {
+  margin-top: $spacing-5;
+  padding-top: $spacing-4;
+  border-top: 1px solid $border;
+  width: 100%;
+}
+
+.count {
+  font-size: $font-sm;
+  font-weight: $font-semibold;
+  color: $accent-light;
+}
+
+@media (max-width: $breakpoint-md) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

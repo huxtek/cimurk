@@ -8,8 +8,8 @@
   border-bottom: 1px solid $border;
   position: sticky;
   top: 0;
-  background: rgba($bg, 0.85);
-  backdrop-filter: blur(12px);
+  background: rgba($bg, 0.8);
+  backdrop-filter: blur(16px) saturate(180%);
   z-index: 100;
 }
 
@@ -17,21 +17,43 @@
   font-size: $font-2xl;
   font-weight: $font-bold;
   color: $text;
+  letter-spacing: -0.02em;
 }
 
 .links {
   display: flex;
-  gap: $spacing-6;
+  gap: $spacing-5;
   align-items: center;
 
   a {
     color: $text-muted;
     font-size: $font-base;
-    transition: color 0.2s;
+    font-weight: $font-medium;
+    transition: color $transition-fast;
+    position: relative;
 
-    &:hover,
-    &.active {
-      color: $accent;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $gradient-accent;
+      border-radius: 1px;
+      transition: width $transition-base;
+    }
+
+    &:hover {
+      color: $text;
+    }
+
+    &:global(.active) {
+      color: $accent-light;
+
+      &::after {
+        width: 100%;
+      }
     }
   }
 }
@@ -40,17 +62,18 @@
   display: flex;
   align-items: center;
   gap: $spacing-2;
-  background: none;
-  border: 1px solid $border;
-  border-radius: $radius-md;
+  background: $accent-glow;
+  border: 1px solid $border-light;
+  border-radius: $radius-full;
   padding: $spacing-1 $spacing-3;
   color: $text;
   cursor: pointer;
   font-size: $font-sm;
-  transition: border-color 0.2s;
+  transition: all $transition-fast;
 
   &:hover {
     border-color: $accent;
+    background: $accent-glow-strong;
   }
 }
 
@@ -61,24 +84,20 @@
 }
 
 .signIn {
-  background: $accent;
+  background: $gradient-accent;
   color: #fff;
   border: none;
-  border-radius: $radius-md;
-  padding: $spacing-2 $spacing-4;
+  border-radius: $radius-full;
+  padding: $spacing-2 $spacing-5;
   font-size: $font-sm;
   font-weight: $font-semibold;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all $transition-base;
+  box-shadow: 0 2px 12px $accent-glow;
 
   &:hover {
-    background: $accent-hover;
-  }
-}
-
-@media (max-width: $breakpoint-sm) {
-  .navbar {
-    padding: $spacing-3 $spacing-4;
+    box-shadow: 0 4px 20px $accent-glow-strong;
+    transform: translateY(-1px);
   }
 }
 
@@ -86,15 +105,26 @@
   background: none;
   border: 1px solid $border;
   color: $text-muted;
-  border-radius: $radius-md;
+  border-radius: $radius-full;
   padding: $spacing-1 $spacing-3;
   font-size: $font-sm;
   font-weight: $font-semibold;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all $transition-fast;
 
   &:hover {
     border-color: $accent;
-    color: $accent;
+    color: $accent-light;
+    background: $accent-glow;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .navbar {
+    padding: $spacing-3 $spacing-4;
+  }
+
+  .links {
+    gap: $spacing-3;
   }
 }

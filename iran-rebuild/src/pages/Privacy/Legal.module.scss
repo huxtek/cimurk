@@ -1,51 +1,52 @@
 @use "../../styles/variables" as *;
 
 .page {
-  padding-top: $spacing-8;
+  padding-top: $spacing-10;
   max-width: $container-narrow;
   margin: 0 auto;
 
   h1 {
     font-size: $font-5xl;
     font-weight: $font-extrabold;
-    margin-bottom: $spacing-1;
+    margin-bottom: $spacing-2;
+    letter-spacing: -0.02em;
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: $font-2xl;
     font-weight: $font-bold;
-    margin-top: $spacing-8;
-    margin-bottom: $spacing-2;
+    margin-top: $spacing-10;
+    margin-bottom: $spacing-3;
   }
 
   h3 {
-    font-size: $font-base;
+    font-size: $font-lg;
     font-weight: $font-semibold;
-    margin-top: $spacing-5;
+    margin-top: $spacing-6;
     margin-bottom: $spacing-2;
   }
 
   p {
     color: $text-muted;
-    font-size: 0.92rem;
-    line-height: 1.7;
-    margin-bottom: $spacing-3;
+    font-size: $font-base;
+    line-height: 1.8;
+    margin-bottom: $spacing-4;
   }
 
   ul {
     color: $text-muted;
-    font-size: 0.92rem;
-    line-height: 1.7;
-    margin-bottom: $spacing-3;
+    font-size: $font-base;
+    line-height: 1.8;
+    margin-bottom: $spacing-4;
     padding-left: $spacing-6;
   }
 
   li {
-    margin-bottom: $spacing-1;
+    margin-bottom: $spacing-2;
   }
 
   a {
-    color: $accent;
+    color: $accent-light;
 
     &:hover {
       text-decoration: underline;
@@ -56,5 +57,5 @@
 .updated {
   color: $text-muted;
   font-size: $font-sm;
-  margin-bottom: $spacing-8;
+  margin-bottom: $spacing-10;
 }

@@ -1,0 +1,103 @@
+import type { Investor } from "../types";
+
+const logo = (domain: string) =>
+  `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+
+export const seedInvestors: Investor[] = [
+  {
+    id: "inv-1",
+    name: "Y Combinator",
+    logo: logo("ycombinator.com"),
+    description: "Silicon Valley's leading startup accelerator, backing bold founders building transformative technology.",
+    website: "https://www.ycombinator.com",
+    projectIds: ["1", "2", "19"],
+  },
+  {
+    id: "inv-2",
+    name: "Sequoia Capital",
+    logo: logo("sequoiacap.com"),
+    description: "Legendary venture capital firm partnering with daring founders to build enduring companies.",
+    website: "https://www.sequoiacap.com",
+    projectIds: ["2", "11", "13"],
+  },
+  {
+    id: "inv-3",
+    name: "Andreessen Horowitz",
+    logo: logo("a16z.com"),
+    description: "Venture capital firm backing bold entrepreneurs building the future through technology.",
+    website: "https://a16z.com",
+    projectIds: ["5", "9", "23"],
+  },
+  {
+    id: "inv-4",
+    name: "Google Ventures",
+    logo: logo("gv.com"),
+    description: "The venture capital arm of Alphabet, investing in the best teams tackling the biggest problems.",
+    website: "https://www.gv.com",
+    projectIds: ["7", "13", "2"],
+  },
+  {
+    id: "inv-5",
+    name: "SoftBank",
+    logo: logo("softbank.com"),
+    description: "Global technology investment platform deploying capital at scale to accelerate the AI revolution.",
+    website: "https://www.softbank.com",
+    projectIds: ["4", "17", "20"],
+  },
+  {
+    id: "inv-6",
+    name: "Accel",
+    logo: logo("accel.com"),
+    description: "Early and growth-stage venture firm that has partnered with exceptional founders for over 40 years.",
+    website: "https://www.accel.com",
+    projectIds: ["1", "19", "24"],
+  },
+  {
+    id: "inv-7",
+    name: "Founders Fund",
+    logo: logo("foundersfund.com"),
+    description: "San Francisco venture capital firm investing in revolutionary companies and visionary entrepreneurs.",
+    website: "https://foundersfund.com",
+    projectIds: ["5", "12", "23"],
+  },
+  {
+    id: "inv-8",
+    name: "Lightspeed",
+    logo: logo("lsvp.com"),
+    description: "Multi-stage venture capital firm focused on accelerating disruptive innovations in enterprise and consumer sectors.",
+    website: "https://lsvp.com",
+    projectIds: ["6", "16", "11"],
+  },
+  {
+    id: "inv-9",
+    name: "Greylock",
+    logo: logo("greylock.com"),
+    description: "Leading Silicon Valley venture firm investing in consumer and enterprise software for over 50 years.",
+    website: "https://greylock.com",
+    projectIds: ["9", "21", "7"],
+  },
+  {
+    id: "inv-10",
+    name: "Benchmark",
+    logo: logo("benchmark.com"),
+    description: "Venture capital firm known for early-stage investments in transformative technology companies.",
+    website: "https://www.benchmark.com",
+    projectIds: ["18", "24", "15"],
+  },
+  {
+    id: "inv-11",
+    name: "Index Ventures",
+    logo: logo("indexventures.com"),
+    description: "International venture capital firm backing entrepreneurs who are reshaping the global economy.",
+    website: "https://www.indexventures.com",
+    projectIds: ["3", "10", "25"],
+  },
+  {
+    id: "inv-12",
+    name: "General Catalyst",
+    logo: logo("generalcatalyst.com"),
+    description: "Venture capital firm that invests in powerful, positive change that endures across technology and healthcare.",
+    website: "https://www.generalcatalyst.com",
+    projectIds: ["8", "14", "22"],
+  },
+];

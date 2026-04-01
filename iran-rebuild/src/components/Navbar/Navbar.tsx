@@ -39,6 +39,9 @@ export default function Navbar() {
         <Link to={lp("/submit")} className={pathname === lp("/submit") ? "active" : ""}>
           {t("Navbar_Submit")}
         </Link>
+        <Link to={lp("/investors")} className={pathname.startsWith(lp("/investors")) ? "active" : ""}>
+          {t("Navbar_Investors")}
+        </Link>
         <button className={styles.langSwitch} onClick={switchLanguage}>
           {targetLabel}
         </button>

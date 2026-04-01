@@ -80,3 +80,12 @@ export const CATEGORIES = [
   "🛡️ Defense & Security Reform",
   "🌍 Foreign Policy & Diplomacy",
 ] as const;
+
+export interface Investor {
+  id: string;
+  name: string;
+  logo: string;
+  description: string;
+  website: string;
+  projectIds: string[];
+}

@@ -7,6 +7,7 @@ export default {
   Navbar_Home: "Home",
   Navbar_Projects: "Projects",
   Navbar_Submit: "+ Submit",
+  Navbar_Investors: "Investors",
   Navbar_SignIn: "Sign In",
 
   // Footer
@@ -26,8 +27,16 @@ export default {
   Home_StatVotes: "Total Votes",
   Home_StatCategories: "Categories",
   Home_TopProjects: "Top Projects",
-  Home_TopProjectsSub: "Highest voted ideas from the community",
+  Home_TopProjectsSub: "Highest voted projects from the community",
   Home_ViewAll: "View All Projects →",
+  Home_TopInvestors: "Investors",
+  Home_TopInvestorsSub: "Backed by visionary partners",
+  Home_ViewAllInvestors: "View All Investors →",
+
+  // Investors
+  Investors_Title: "All Investors",
+  Investors_Subtitle: "Partners backing the projects that will shape Iran's future",
+  Investors_Projects: "projects backed",
 
   // Projects
   Projects_Title: "All Projects",

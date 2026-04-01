@@ -7,6 +7,7 @@ export default {
   Navbar_Home: "خانه",
   Navbar_Projects: "پروژه‌ها",
   Navbar_Submit: "+ ارسال",
+  Navbar_Investors: "سرمایه‌گذاران",
   Navbar_SignIn: "ورود",
 
   // Footer
@@ -26,8 +27,16 @@ export default {
   Home_StatVotes: "مجموع آرا",
   Home_StatCategories: "دسته‌بندی‌ها",
   Home_TopProjects: "پروژه‌های برتر",
-  Home_TopProjectsSub: "ایده‌های با بیشترین رأی از جامعه",
+  Home_TopProjectsSub: "پروژه‌های با بیشترین رأی از جامعه",
   Home_ViewAll: "← مشاهده همه پروژه‌ها",
+  Home_TopInvestors: "سرمایه‌گذاران",
+  Home_TopInvestorsSub: "حمایت‌شده توسط شرکای آینده‌نگر",
+  Home_ViewAllInvestors: "← مشاهده همه سرمایه‌گذاران",
+
+  // Investors
+  Investors_Title: "همه سرمایه‌گذاران",
+  Investors_Subtitle: "شرکایی که از پروژه‌های آینده‌ساز ایران حمایت می‌کنند",
+  Investors_Projects: "پروژه حمایت‌شده",
 
   // Projects
   Projects_Title: "همه پروژه‌ها",

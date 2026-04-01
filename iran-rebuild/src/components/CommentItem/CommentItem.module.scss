@@ -1,7 +1,7 @@
 @use "../../styles/variables" as *;
 
 .item {
-  padding: $spacing-4 0;
+  padding: $spacing-5 0;
   border-top: 1px solid $border;
 
   &:first-child {
@@ -11,65 +11,68 @@
 
 .nested {
   margin-left: $spacing-8;
-  border-left: 2px solid $border;
-  padding-left: $spacing-4;
+  border-left: 2px solid $border-light;
+  padding-left: $spacing-5;
 }
 
 .header {
   display: flex;
   align-items: center;
-  gap: $spacing-2;
+  gap: $spacing-3;
   margin-bottom: $spacing-2;
 }
 
 .avatar {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
+  border: 1px solid $border;
 }
 
 .author {
   font-size: $font-sm;
   font-weight: $font-semibold;
+  color: $text;
 }
 
 .time {
-  font-size: 0.78rem;
+  font-size: $font-xs;
   color: $text-muted;
 }
 
 .text {
   font-size: $font-base;
-  line-height: 1.5;
+  line-height: 1.6;
   color: $text;
   margin-bottom: $spacing-2;
 }
 
 .actions {
-  margin-bottom: $spacing-1;
+  margin-bottom: $spacing-2;
 }
 
 .replyBtn {
   background: none;
   border: none;
-  color: $accent;
+  color: $accent-light;
   font-size: $font-sm;
   cursor: pointer;
   padding: 0;
   font-weight: $font-medium;
+  transition: opacity $transition-fast;
 
   &:hover {
-    text-decoration: underline;
+    opacity: 0.8;
   }
 }
 
 .replyForm {
-  margin-top: $spacing-2;
-  margin-left: $spacing-8;
+  margin-top: $spacing-3;
+  margin-left: $spacing-10;
 
   textarea {
     width: 100%;
-    padding: $spacing-2 $spacing-3;
+    padding: $spacing-3 $spacing-4;
     border-radius: $radius-md;
     border: 1px solid $border;
     background: $bg-card;
@@ -78,15 +81,16 @@
     font-family: inherit;
     outline: none;
     resize: vertical;
-    transition: border-color 0.2s;
+    transition: all $transition-fast;
     margin-bottom: $spacing-2;
 
     &:focus {
       border-color: $accent;
+      box-shadow: 0 0 0 3px $accent-glow;
     }
   }
 }
 
 .replies {
-  margin-top: $spacing-1;
+  margin-top: $spacing-2;
 }

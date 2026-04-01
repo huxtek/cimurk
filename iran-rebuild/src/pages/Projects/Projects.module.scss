@@ -1,24 +1,25 @@
 @use "../../styles/variables" as *;
 
 .section {
-  padding-top: $spacing-8;
+  padding-top: $spacing-10;
 
   h2 {
     font-size: $font-4xl;
     font-weight: $font-bold;
+    letter-spacing: -0.01em;
   }
 }
 
 .sub {
   color: $text-muted;
-  margin-bottom: $spacing-6;
+  margin-bottom: $spacing-8;
 }
 
 .filters {
   display: flex;
   gap: $spacing-3;
   flex-wrap: wrap;
-  margin-bottom: $spacing-8;
+  margin-bottom: $spacing-10;
 }
 
 .list {
@@ -30,5 +31,6 @@
 .empty {
   text-align: center;
   color: $text-muted;
-  padding: $spacing-12 0;
+  padding: $spacing-16 0;
+  font-size: $font-lg;
 }

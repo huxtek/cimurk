@@ -33,9 +33,9 @@ describe("Home", () => {
     expect(screen.getByText("View All Projects →")).toBeInTheDocument();
   });
 
-  it("shows at most 3 project cards", () => {
+  it("shows at most 3 top project cards", () => {
     renderWithProviders(<Home />);
-    const cards = screen.getAllByRole("button");
+    const cards = screen.getAllByRole("heading", { level: 3 });
     expect(cards.length).toBeLessThanOrEqual(3);
   });
 });

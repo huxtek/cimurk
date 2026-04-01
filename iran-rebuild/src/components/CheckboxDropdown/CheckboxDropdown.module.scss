@@ -12,7 +12,7 @@
 
 .chevron {
   font-size: $font-sm;
-  transition: transform 0.2s;
+  transition: transform $transition-fast;
 }
 
 .chevronOpen {
@@ -24,25 +24,26 @@
   top: calc(100% + $spacing-2);
   left: 0;
   background: $bg-card;
-  border: 1px solid $border;
+  border: 1px solid $border-light;
   border-radius: $radius-lg;
   padding: $spacing-2 0;
   min-width: 260px;
   max-height: 360px;
   overflow-y: auto;
   z-index: 50;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: $shadow-lg;
+  backdrop-filter: blur(8px);
 }
 
 .option {
   display: flex;
   align-items: center;
   gap: $spacing-3;
-  padding: $spacing-2 $spacing-4;
+  padding: $spacing-3 $spacing-5;
   cursor: pointer;
-  font-size: 0.88rem;
+  font-size: $font-base;
   color: $text;
-  transition: background 0.15s;
+  transition: background $transition-fast;
 
   &:hover {
     background: $bg-hover;

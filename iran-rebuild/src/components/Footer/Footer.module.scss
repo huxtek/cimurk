@@ -3,7 +3,8 @@
 .footer {
   border-top: 1px solid $border;
   margin-top: $spacing-16;
-  padding: $spacing-8 $spacing-8 $spacing-6;
+  padding: $spacing-10 $spacing-8 $spacing-6;
+  background: $bg-elevated;
 }
 
 .container {
@@ -22,6 +23,7 @@
   font-size: $font-xl;
   font-weight: $font-bold;
   color: $text;
+  letter-spacing: -0.02em;
 }
 
 .social {
@@ -33,15 +35,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: $radius-md;
     border: 1px solid $border;
-    transition: all 0.2s;
+    transition: all $transition-fast;
+    background: $bg-card;
 
     &:hover {
-      color: $accent;
+      color: $accent-light;
       border-color: $accent;
+      background: $accent-glow;
+      transform: translateY(-1px);
     }
   }
 }
@@ -50,7 +55,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: $spacing-4;
+  padding-top: $spacing-6;
   border-top: 1px solid $border;
 }
 
@@ -67,10 +72,10 @@
   a {
     color: $text-muted;
     font-size: $font-sm;
-    transition: color 0.2s;
+    transition: color $transition-fast;
 
     &:hover {
-      color: $accent;
+      color: $accent-light;
     }
   }
 }
@@ -81,6 +86,10 @@
 }
 
 @media (max-width: $breakpoint-sm) {
+  .footer {
+    padding: $spacing-8 $spacing-4 $spacing-4;
+  }
+
   .bottom {
     flex-direction: column;
     align-items: flex-start;

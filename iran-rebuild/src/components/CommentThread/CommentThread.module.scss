@@ -2,30 +2,31 @@
 
 .section {
   border-top: 1px solid $border;
-  padding-top: $spacing-8;
+  padding-top: $spacing-10;
 
   h3 {
     font-size: $font-3xl;
     font-weight: $font-bold;
-    margin-bottom: $spacing-5;
+    margin-bottom: $spacing-6;
   }
 }
 
 .form {
-  margin-bottom: $spacing-8;
+  margin-bottom: $spacing-10;
 }
 
 .formHeader {
   display: flex;
   align-items: center;
-  gap: $spacing-2;
-  margin-bottom: $spacing-2;
+  gap: $spacing-3;
+  margin-bottom: $spacing-3;
 }
 
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  border: 2px solid $border-light;
 }
 
 .authorName {
@@ -35,7 +36,7 @@
 
 .form textarea {
   width: 100%;
-  padding: $spacing-3 $spacing-4;
+  padding: $spacing-4 $spacing-5;
   border-radius: $radius-md;
   border: 1px solid $border;
   background: $bg-card;
@@ -44,11 +45,12 @@
   font-family: inherit;
   outline: none;
   resize: vertical;
-  transition: border-color 0.2s;
-  margin-bottom: $spacing-2;
+  transition: all $transition-fast;
+  margin-bottom: $spacing-3;
 
   &:focus {
     border-color: $accent;
+    box-shadow: 0 0 0 3px $accent-glow;
   }
 }
 
