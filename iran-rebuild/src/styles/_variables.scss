@@ -74,7 +74,36 @@ $transition-slow: 0.4s ease;
 
 // ---- Breakpoints ----
 $breakpoint-sm: 640px;
-$breakpoint-md: 768px;
+$breakpoint-md: 1024px;
+
+// ---- Mixins ----
+// Usage: @include mobile { ... }
+@mixin mobile {
+  @media (max-width: #{$breakpoint-sm - 1}) {
+    @content;
+  }
+}
+
+// Usage: @include tablet { ... }
+@mixin tablet {
+  @media (min-width: $breakpoint-sm) and (max-width: #{$breakpoint-md - 1}) {
+    @content;
+  }
+}
+
+// Usage: @include mobile-and-tablet { ... }
+@mixin mobile-and-tablet {
+  @media (max-width: #{$breakpoint-md - 1}) {
+    @content;
+  }
+}
+
+// Usage: @include desktop { ... }
+@mixin desktop {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
 
 // ---- Layout ----
 $container-max: 960px;

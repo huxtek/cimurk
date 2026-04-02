@@ -13,9 +13,9 @@ describe("App", () => {
 
   it("renders navigation links", () => {
     render(<App />);
-    expect(screen.getByText("Home")).toBeInTheDocument();
-    expect(screen.getByText("Projects")).toBeInTheDocument();
-    expect(screen.getByText("+ Submit")).toBeInTheDocument();
+    expect(screen.getAllByText("Home").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("Projects").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("+ Submit").length).toBeGreaterThanOrEqual(1);
   });
 
   it("renders loading fallback for lazy routes", () => {

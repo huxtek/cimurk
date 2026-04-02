@@ -78,13 +78,13 @@
   color: $accent-light;
 }
 
-@media (max-width: $breakpoint-md) {
+@include tablet {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: $breakpoint-sm) {
+@include mobile {
   .grid {
     grid-template-columns: 1fr;
   }

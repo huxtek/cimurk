@@ -10,40 +10,55 @@ describe("Navbar", () => {
     expect(screen.getByText("Cimurk")).toBeInTheDocument();
   });
 
-  it("renders navigation links", () => {
+  it("renders navigation links in desktop and drawer", () => {
     renderWithProviders(<Navbar />);
-    expect(screen.getByText("Home")).toBeInTheDocument();
-    expect(screen.getByText("Projects")).toBeInTheDocument();
-    expect(screen.getByText("+ Submit")).toBeInTheDocument();
+    expect(screen.getAllByText("Home").length).toBe(2);
+    expect(screen.getAllByText("Projects").length).toBe(2);
+    expect(screen.getAllByText("+ Submit").length).toBe(2);
+    expect(screen.getAllByText("Investors").length).toBe(2);
   });
 
-  it("shows Sign In button when not authenticated", () => {
+  it("shows Sign In buttons when not authenticated", () => {
     renderWithProviders(<Navbar />);
-    expect(screen.getByText("Sign In")).toBeInTheDocument();
+    expect(screen.getAllByText("Sign In").length).toBe(2);
   });
 
   it("shows user info after signing in", async () => {
     const user = userEvent.setup();
     renderWithProviders(<Navbar />);
-    await user.click(screen.getByText("Sign In"));
-    expect(screen.getByText("Kian Ahmadi")).toBeInTheDocument();
+    await user.click(screen.getAllByText("Sign In")[0]);
+    expect(screen.getAllByText("Kian Ahmadi").length).toBeGreaterThanOrEqual(1);
   });
 
   it("signs out when clicking user button", async () => {
     const user = userEvent.setup();
     renderWithProviders(<Navbar />);
-    await user.click(screen.getByText("Sign In"));
-    await user.click(screen.getByText("Kian Ahmadi"));
-    expect(screen.getByText("Sign In")).toBeInTheDocument();
+    await user.click(screen.getAllByText("Sign In")[0]);
+    await user.click(screen.getAllByText("Kian Ahmadi")[0]);
+    expect(screen.getAllByText("Sign In").length).toBe(2);
   });
 
   it("highlights active Home link on /", () => {
     renderWithProviders(<Navbar />, { route: "/" });
-    expect(screen.getByText("Home")).toHaveClass("active");
+    const homeLinks = screen.getAllByText("Home");
+    expect(homeLinks[0]).toHaveClass("active");
   });
 
   it("highlights active Projects link on /projects", () => {
     renderWithProviders(<Navbar />, { route: "/projects" });
-    expect(screen.getByText("Projects")).toHaveClass("active");
+    const projectLinks = screen.getAllByText("Projects");
+    expect(projectLinks[0]).toHaveClass("active");
+  });
+
+  it("renders hamburger button", () => {
+    renderWithProviders(<Navbar />);
+    expect(screen.getByLabelText("Open menu")).toBeInTheDocument();
+  });
+
+  it("opens drawer when hamburger is clicked", async () => {
+    const user = userEvent.setup();
+    renderWithProviders(<Navbar />);
+    await user.click(screen.getByLabelText("Open menu"));
+    expect(screen.getByLabelText("Close menu")).toBeInTheDocument();
   });
 });

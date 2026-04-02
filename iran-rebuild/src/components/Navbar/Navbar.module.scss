@@ -11,6 +11,10 @@
   background: rgba($bg, 0.8);
   backdrop-filter: blur(16px) saturate(180%);
   z-index: 100;
+
+  @include mobile {
+    padding: $spacing-3 $spacing-4;
+  }
 }
 
 .brand {
@@ -20,7 +24,8 @@
   letter-spacing: -0.02em;
 }
 
-.links {
+// ---- Desktop Links ----
+.desktopLinks {
   display: flex;
   gap: $spacing-5;
   align-items: center;
@@ -56,8 +61,136 @@
       }
     }
   }
+
+  @include mobile-and-tablet {
+    display: none;
+  }
 }
 
+// ---- Hamburger Button ----
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-2;
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: $text;
+    border-radius: 2px;
+    transition: all $transition-fast;
+  }
+
+  @include mobile-and-tablet {
+    display: flex;
+  }
+}
+
+// ---- Overlay ----
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  animation: fadeIn 0.2s ease;
+}
+
+// ---- Drawer ----
+.drawer {
+  position: fixed;
+  top: 0;
+  inset-inline-end: 0;
+  width: 280px;
+  height: 100vh;
+  height: 100dvh;
+  background: $bg-elevated;
+  border-inline-start: 1px solid $border;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-8 $spacing-6;
+  transform: translateX(100%);
+  transition: transform $transition-base;
+
+  [dir="rtl"] & {
+    transform: translateX(-100%);
+  }
+}
+
+.drawerOpen {
+  transform: translateX(0);
+
+  [dir="rtl"] & {
+    transform: translateX(0);
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: $spacing-4;
+  inset-inline-end: $spacing-4;
+  background: none;
+  border: 1px solid $border;
+  color: $text-muted;
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-md;
+  cursor: pointer;
+  font-size: $font-base;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $red;
+    color: $red;
+  }
+}
+
+.drawerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+  margin-top: $spacing-10;
+
+  a {
+    display: block;
+    padding: $spacing-3 $spacing-4;
+    border-radius: $radius-md;
+    color: $text-muted;
+    font-size: $font-lg;
+    font-weight: $font-medium;
+    transition: all $transition-fast;
+    text-decoration: none;
+
+    &:hover {
+      background: $bg-hover;
+      color: $text;
+    }
+
+    &:global(.active) {
+      color: $accent-light;
+      background: $accent-glow;
+    }
+  }
+}
+
+.drawerFooter {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+  padding-top: $spacing-6;
+  border-top: 1px solid $border;
+}
+
+// ---- Shared Button Styles ----
 .user {
   display: flex;
   align-items: center;
@@ -111,6 +244,7 @@
   font-weight: $font-semibold;
   cursor: pointer;
   transition: all $transition-fast;
+  width: fit-content;
 
   &:hover {
     border-color: $accent;
@@ -119,12 +253,7 @@
   }
 }
 
-@media (max-width: $breakpoint-sm) {
-  .navbar {
-    padding: $spacing-3 $spacing-4;
-  }
-
-  .links {
-    gap: $spacing-3;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

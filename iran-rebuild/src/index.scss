@@ -31,6 +31,10 @@ a {
   max-width: $container-max;
   margin: 0 auto;
   padding: 0 $spacing-6 $spacing-16;
+
+  @include mobile {
+    padding: 0 $spacing-4 $spacing-10;
+  }
 }
 
 // ---- Shared Buttons ----

@@ -118,7 +118,7 @@
   font-style: italic;
 }
 
-@media (max-width: $breakpoint-sm) {
+@include mobile {
   .card {
     flex-direction: column;
     padding: $spacing-5;

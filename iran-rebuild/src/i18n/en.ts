@@ -74,6 +74,54 @@ export default {
   Submit_PlaceholderAuthor: "Anonymous if left blank",
   Submit_Button: "Submit Project",
 
+  // Categories
+  "cat_🔓 Pre-Freedom": "🔓 Pre-Freedom",
+  "cat_💻 Software & Technology": "💻 Software & Technology",
+  "cat_🏗️ Civil & Infrastructure": "🏗️ Civil & Infrastructure",
+  "cat_⚡ Energy": "⚡ Energy",
+  "cat_🏥 Healthcare & Medicine": "🏥 Healthcare & Medicine",
+  "cat_🎓 Education & Research": "🎓 Education & Research",
+  "cat_🏦 Economy & Finance": "🏦 Economy & Finance",
+  "cat_⚖️ Governance & Law": "⚖️ Governance & Law",
+  "cat_🌱 Environment & Water": "🌱 Environment & Water",
+  "cat_🚆 Transportation & Logistics": "🚆 Transportation & Logistics",
+  "cat_🏘️ Housing & Urban Development": "🏘️ Housing & Urban Development",
+  "cat_🎨 Culture, Arts & Media": "🎨 Culture, Arts & Media",
+  "cat_🤝 Civil Society & NGOs": "🤝 Civil Society & NGOs",
+  "cat_🛡️ Defense & Security Reform": "🛡️ Defense & Security Reform",
+  "cat_🌍 Foreign Policy & Diplomacy": "🌍 Foreign Policy & Diplomacy",
+
+  // Stages
+  "stage_💡 Idea": "💡 Idea",
+  "stage_🔍 Research": "🔍 Research",
+  "stage_📋 Planning": "📋 Planning",
+  "stage_🚀 Started": "🚀 Started",
+  "stage_🌱 Pre-Seed": "🌱 Pre-Seed",
+  "stage_🌿 Seed": "🌿 Seed",
+  "stage_🛠️ MVP": "🛠️ MVP",
+  "stage_📈 Growth": "📈 Growth",
+  "stage_🏛️ Scale / Policy": "🏛️ Scale / Policy",
+
+  // Timelines
+  "timeline_< 3 months": "< 3 months",
+  "timeline_3-6 months": "3-6 months",
+  "timeline_6-12 months": "6-12 months",
+  "timeline_1-2 years": "1-2 years",
+  "timeline_2-3 years": "2-3 years",
+  "timeline_3-5 years": "3-5 years",
+  "timeline_5-10 years": "5-10 years",
+  "timeline_10+ years": "10+ years",
+
+  // Budgets
+  "budget_< $10K": "< $10K",
+  "budget_$10K - $50K": "$10K - $50K",
+  "budget_$50K - $100K": "$50K - $100K",
+  "budget_$100K - $500K": "$100K - $500K",
+  "budget_$500K - $1M": "$500K - $1M",
+  "budget_$1M - $10M": "$1M - $10M",
+  "budget_$10M - $100M": "$10M - $100M",
+  "budget_$100M+": "$100M+",
+
   // Terms
   Terms_Title: "Terms and Conditions",
   Terms_Updated: "Last updated: April 1, 2026",

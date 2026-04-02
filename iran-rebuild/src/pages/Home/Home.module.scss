@@ -253,7 +253,7 @@
   margin-top: $spacing-10;
 }
 
-@media (max-width: $breakpoint-md) {
+@include mobile-and-tablet {
   .grid {
     grid-template-columns: 1fr;
     gap: $spacing-4;
@@ -351,7 +351,7 @@
   }
 }
 
-@media (max-width: $breakpoint-sm) {
+@include mobile {
   .marqueeWrap::before,
   .marqueeWrap::after {
     width: 40px;
@@ -394,7 +394,7 @@
 }
 
 // ---- Responsive ----
-@media (max-width: $breakpoint-sm) {
+@include mobile {
   .hero {
     padding: $spacing-16 $spacing-4 $spacing-10;
     min-height: 100vh;
@@ -416,5 +416,16 @@
 
   .statNum {
     font-size: $font-4xl;
+  }
+}
+
+@include tablet {
+  .heroContent h1 {
+    font-size: $font-6xl;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: $spacing-4;
   }
 }

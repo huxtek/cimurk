@@ -85,7 +85,7 @@
   font-size: $font-sm;
 }
 
-@media (max-width: $breakpoint-sm) {
+@include mobile {
   .footer {
     padding: $spacing-8 $spacing-4 $spacing-4;
   }

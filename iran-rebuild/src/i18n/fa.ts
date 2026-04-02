@@ -74,6 +74,54 @@ export default {
   Submit_PlaceholderAuthor: "در صورت خالی بودن، ناشناس",
   Submit_Button: "ارسال پروژه",
 
+  // Categories
+  "cat_🔓 Pre-Freedom": "🔓 پیش از آزادی",
+  "cat_💻 Software & Technology": "💻 نرم‌افزار و فناوری",
+  "cat_🏗️ Civil & Infrastructure": "🏗️ عمران و زیرساخت",
+  "cat_⚡ Energy": "⚡ انرژی",
+  "cat_🏥 Healthcare & Medicine": "🏥 بهداشت و پزشکی",
+  "cat_🎓 Education & Research": "🎓 آموزش و پژوهش",
+  "cat_🏦 Economy & Finance": "🏦 اقتصاد و مالی",
+  "cat_⚖️ Governance & Law": "⚖️ حکمرانی و قانون",
+  "cat_🌱 Environment & Water": "🌱 محیط زیست و آب",
+  "cat_🚆 Transportation & Logistics": "🚆 حمل‌ونقل و لجستیک",
+  "cat_🏘️ Housing & Urban Development": "🏘️ مسکن و توسعه شهری",
+  "cat_🎨 Culture, Arts & Media": "🎨 فرهنگ، هنر و رسانه",
+  "cat_🤝 Civil Society & NGOs": "🤝 جامعه مدنی و سازمان‌های مردم‌نهاد",
+  "cat_🛡️ Defense & Security Reform": "🛡️ اصلاح دفاعی و امنیتی",
+  "cat_🌍 Foreign Policy & Diplomacy": "🌍 سیاست خارجی و دیپلماسی",
+
+  // Stages
+  "stage_💡 Idea": "💡 ایده",
+  "stage_🔍 Research": "🔍 تحقیق",
+  "stage_📋 Planning": "📋 برنامه‌ریزی",
+  "stage_🚀 Started": "🚀 شروع شده",
+  "stage_🌱 Pre-Seed": "🌱 پیش از تأمین مالی",
+  "stage_🌿 Seed": "🌿 تأمین مالی اولیه",
+  "stage_🛠️ MVP": "🛠️ محصول اولیه",
+  "stage_📈 Growth": "📈 رشد",
+  "stage_🏛️ Scale / Policy": "🏛️ مقیاس / سیاست‌گذاری",
+
+  // Timelines
+  "timeline_< 3 months": "کمتر از ۳ ماه",
+  "timeline_3-6 months": "۳ تا ۶ ماه",
+  "timeline_6-12 months": "۶ تا ۱۲ ماه",
+  "timeline_1-2 years": "۱ تا ۲ سال",
+  "timeline_2-3 years": "۲ تا ۳ سال",
+  "timeline_3-5 years": "۳ تا ۵ سال",
+  "timeline_5-10 years": "۵ تا ۱۰ سال",
+  "timeline_10+ years": "بیش از ۱۰ سال",
+
+  // Budgets
+  "budget_< $10K": "کمتر از ۱۰ هزار دلار",
+  "budget_$10K - $50K": "۱۰ تا ۵۰ هزار دلار",
+  "budget_$50K - $100K": "۵۰ تا ۱۰۰ هزار دلار",
+  "budget_$100K - $500K": "۱۰۰ تا ۵۰۰ هزار دلار",
+  "budget_$500K - $1M": "۵۰۰ هزار تا ۱ میلیون دلار",
+  "budget_$1M - $10M": "۱ تا ۱۰ میلیون دلار",
+  "budget_$10M - $100M": "۱۰ تا ۱۰۰ میلیون دلار",
+  "budget_$100M+": "بیش از ۱۰۰ میلیون دلار",
+
   // Terms
   Terms_Title: "شرایط و قوانین",
   Terms_Updated: "آخرین به‌روزرسانی: ۱ آوریل ۲۰۲۶",

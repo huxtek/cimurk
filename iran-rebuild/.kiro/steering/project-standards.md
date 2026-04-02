@@ -76,6 +76,18 @@ ComponentName/
 - `ScrollToTop` component ensures scroll resets on navigation
 - Route paths use kebab-case
 
+## Responsive Design
+
+- Three breakpoints: mobile (< 640px), tablet (640px - 1023px), desktop (≥ 1024px)
+- Use SCSS mixins from `_variables.scss`: `@include mobile { }`, `@include tablet { }`, `@include mobile-and-tablet { }`, `@include desktop { }`
+- Never use raw `@media` queries — always use the mixins for consistency
+- Every new component and page MUST include responsive styles for all three breakpoints
+- When creating a new component, always consider how it looks and behaves on mobile, tablet, and desktop before marking it complete
+- Navbar collapses to a hamburger menu with a slide-in drawer on mobile and tablet
+- Grids should reduce columns on smaller screens (e.g. 3-col → 2-col → 1-col)
+- Touch targets must be at least 44px on mobile
+- Test responsive layouts at 375px (mobile), 768px (tablet), and 1280px (desktop)
+
 ## Code Style
 
 - Functional components only

@@ -55,13 +55,13 @@ export default function Submit() {
           <label>
             {t("Submit_FieldCategory")}
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
-              {CATEGORIES.map((c) => (<option key={c} value={c}>{c}</option>))}
+              {CATEGORIES.map((c) => (<option key={c} value={c}>{t(`cat_${c}`)}</option>))}
             </select>
           </label>
           <label>
             {t("Submit_FieldStage")}
             <select value={stage} onChange={(e) => setStage(e.target.value)}>
-              {STAGES.map((s) => (<option key={s} value={s}>{s}</option>))}
+              {STAGES.map((s) => (<option key={s} value={s}>{t(`stage_${s}`)}</option>))}
             </select>
           </label>
         </div>
@@ -70,13 +70,13 @@ export default function Submit() {
           <label>
             {t("Submit_FieldTimeline")}
             <select value={timeline} onChange={(e) => setTimeline(e.target.value)}>
-              {TIMELINES.map((tt) => (<option key={tt} value={tt}>{tt}</option>))}
+              {TIMELINES.map((tt) => (<option key={tt} value={tt}>{t(`timeline_${tt}`)}</option>))}
             </select>
           </label>
           <label>
             {t("Submit_FieldBudget")}
             <select value={budget} onChange={(e) => setBudget(e.target.value)}>
-              {BUDGETS.map((b) => (<option key={b} value={b}>{b}</option>))}
+              {BUDGETS.map((b) => (<option key={b} value={b}>{t(`budget_${b}`)}</option>))}
             </select>
           </label>
         </div>
