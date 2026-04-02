@@ -4,19 +4,23 @@ import type { Comment } from "../types";
 
 interface CommentContextValue {
   comments: Comment[];
-  addComment: (comment: Omit<Comment, "id" | "createdAt">) => void;
+  commentLikes: Record<string, boolean>;
+  addComment: (comment: Omit<Comment, "id" | "votes" | "createdAt">) => void;
+  likeComment: (id: string) => void;
 }
 
 const CommentContext = createContext<CommentContextValue | null>(null);
 
 export function CommentProvider({ children }: { children: ReactNode }) {
   const [comments, setComments] = useState<Comment[]>([]);
+  const [commentLikes, setCommentLikes] = useState<Record<string, boolean>>({});
 
   const addComment = useCallback(
-    (data: Omit<Comment, "id" | "createdAt">) => {
+    (data: Omit<Comment, "id" | "votes" | "createdAt">) => {
       const newComment: Comment = {
         ...data,
         id: crypto.randomUUID(),
+        votes: 0,
         createdAt: new Date().toISOString(),
       };
       setComments((prev) => [...prev, newComment]);
@@ -24,8 +28,17 @@ export function CommentProvider({ children }: { children: ReactNode }) {
     []
   );
 
+  const likeComment = useCallback((id: string) => {
+    const liked = !!commentLikes[id];
+    const delta = liked ? -1 : 1;
+    setCommentLikes((prev) => ({ ...prev, [id]: !liked }));
+    setComments((prev) =>
+      prev.map((c) => (c.id === id ? { ...c, votes: c.votes + delta } : c))
+    );
+  }, [commentLikes]);
+
   return (
-    <CommentContext.Provider value={{ comments, addComment }}>
+    <CommentContext.Provider value={{ comments, commentLikes, addComment, likeComment }}>
       {children}
     </CommentContext.Provider>
   );

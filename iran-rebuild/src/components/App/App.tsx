@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { AuthProvider } from "../../context/AuthContext";
 import { ProjectProvider } from "../../context/ProjectContext";
 import { CommentProvider } from "../../context/CommentContext";
-import { InvestorProvider } from "../../context/InvestorContext";
+import { PartnerProvider } from "../../context/PartnerContext";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import ScrollToTop from "../ScrollToTop";
@@ -16,7 +16,7 @@ const ProjectDetail = lazy(() => import("../../pages/ProjectDetail"));
 const Submit = lazy(() => import("../../pages/Submit"));
 const Terms = lazy(() => import("../../pages/Terms"));
 const Privacy = lazy(() => import("../../pages/Privacy"));
-const Investors = lazy(() => import("../../pages/Investors"));
+const Partners = lazy(() => import("../../pages/Partners"));
 
 function PageRoutes() {
   return (
@@ -27,7 +27,7 @@ function PageRoutes() {
       <Route path="submit" element={<Submit />} />
       <Route path="terms" element={<Terms />} />
       <Route path="privacy" element={<Privacy />} />
-      <Route path="investors" element={<Investors />} />
+      <Route path="partners" element={<Partners />} />
     </>
   );
 }
@@ -64,9 +64,9 @@ export default function App() {
       <AuthProvider>
         <ProjectProvider>
           <CommentProvider>
-            <InvestorProvider>
+            <PartnerProvider>
               <AppContent />
-            </InvestorProvider>
+            </PartnerProvider>
           </CommentProvider>
         </ProjectProvider>
       </AuthProvider>

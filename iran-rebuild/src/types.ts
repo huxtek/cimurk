@@ -11,6 +11,7 @@ export interface Comment {
   authorName: string;
   authorEmail: string;
   text: string;
+  votes: number;
   createdAt: string;
 }
 
@@ -19,6 +20,7 @@ export interface Project {
   title: string;
   description: string;
   category: string;
+  contributorType?: string;
   stage: string;
   timeline: string;
   budget: string;
@@ -81,7 +83,16 @@ export const CATEGORIES = [
   "🌍 Foreign Policy & Diplomacy",
 ] as const;
 
-export interface Investor {
+export const CONTRIBUTOR_TYPES = [
+  "Builder",
+  "Technical",
+  "Operator",
+  "Investor / Supporter",
+] as const;
+
+export type ContributorType = (typeof CONTRIBUTOR_TYPES)[number];
+
+export interface Partner {
   id: string;
   name: string;
   logo: string;

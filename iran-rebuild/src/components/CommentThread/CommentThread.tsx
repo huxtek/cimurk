@@ -16,11 +16,9 @@ export default function CommentThread({ projectId }: Props) {
   const [text, setText] = useState("");
 
   const projectComments = useMemo(
-    () => comments.filter((c) => c.projectId === projectId),
+    () => comments.filter((c) => c.projectId === projectId && c.parentId === null),
     [comments, projectId]
   );
-
-  const topLevel = projectComments.filter((c) => c.parentId === null);
 
   function handleSubmit() {
     if (!text.trim() || !user) return;
@@ -73,13 +71,10 @@ export default function CommentThread({ projectId }: Props) {
       </div>
 
       <div className={styles.list}>
-        {topLevel.map((comment) => (
+        {projectComments.map((comment) => (
           <CommentItem
             key={comment.id}
             comment={comment}
-            allComments={projectComments}
-            projectId={projectId}
-            depth={0}
           />
         ))}
       </div>

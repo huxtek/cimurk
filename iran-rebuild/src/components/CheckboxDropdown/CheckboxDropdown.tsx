@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./CheckboxDropdown.module.scss";
 
 interface Props {
@@ -6,11 +7,13 @@ interface Props {
   options: readonly string[];
   selected: Set<string>;
   onChange: (next: Set<string>) => void;
+  translateOption?: (opt: string) => string;
 }
 
-export default function CheckboxDropdown({ label, options, selected, onChange }: Props) {
+export default function CheckboxDropdown({ label, options, selected, onChange, translateOption }: Props) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -39,7 +42,7 @@ export default function CheckboxDropdown({ label, options, selected, onChange }:
   }
 
   const buttonLabel = allSelected
-    ? `${label} — All`
+    ? `${label} — ${t("Filter_All")}`
     : `${label} (${selected.size})`;
 
   return (
@@ -56,7 +59,7 @@ export default function CheckboxDropdown({ label, options, selected, onChange }:
         <div className={styles.menu}>
           <label className={styles.option}>
             <input type="checkbox" checked={allSelected} onChange={toggleAll} />
-            <span>All</span>
+            <span>{t("Filter_All")}</span>
           </label>
           {options.map((opt) => (
             <label key={opt} className={styles.option}>
@@ -65,7 +68,7 @@ export default function CheckboxDropdown({ label, options, selected, onChange }:
                 checked={selected.has(opt)}
                 onChange={() => toggle(opt)}
               />
-              <span>{opt}</span>
+              <span>{translateOption ? translateOption(opt) : opt}</span>
             </label>
           ))}
         </div>

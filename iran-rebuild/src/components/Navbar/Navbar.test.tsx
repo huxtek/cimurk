@@ -15,7 +15,7 @@ describe("Navbar", () => {
     expect(screen.getAllByText("Home").length).toBe(2);
     expect(screen.getAllByText("Projects").length).toBe(2);
     expect(screen.getAllByText("+ Submit").length).toBe(2);
-    expect(screen.getAllByText("Investors").length).toBe(2);
+    expect(screen.getAllByText("Partners").length).toBe(2);
   });
 
   it("shows Sign In buttons when not authenticated", () => {

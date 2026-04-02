@@ -7,7 +7,7 @@ export default {
   Navbar_Home: "Home",
   Navbar_Projects: "Projects",
   Navbar_Submit: "+ Submit",
-  Navbar_Investors: "Investors",
+  Navbar_Partners: "Partners",
   Navbar_SignIn: "Sign In",
 
   // Footer
@@ -29,21 +29,26 @@ export default {
   Home_TopProjects: "Top Projects",
   Home_TopProjectsSub: "Highest voted projects from the community",
   Home_ViewAll: "View All Projects →",
-  Home_TopInvestors: "Investors",
-  Home_TopInvestorsSub: "Backed by visionary partners",
-  Home_ViewAllInvestors: "View All Investors →",
+  Home_TopPartners: "Partners",
+  Home_TopPartnersSub: "Backed by visionary partners",
+  Home_ViewAllPartners: "View All Partners →",
 
-  // Investors
-  Investors_Title: "All Investors",
-  Investors_Subtitle: "Partners backing the projects that will shape Iran's future",
-  Investors_Projects: "projects backed",
+  // Partners
+  Partners_Title: "All Partners",
+  Partners_Subtitle: "Partners backing the projects that will shape Iran's future",
+  Partners_Projects: "projects backed",
+
+  // Filters
+  Filter_All: "All",
 
   // Projects
   Projects_Title: "All Projects",
   Projects_Subtitle: "Sorted by votes — discover, explore, and support",
+  Projects_Filters: "Filters",
   Projects_FilterCategories: "Categories",
   Projects_FilterTimeline: "Timeline",
   Projects_FilterBudget: "Budget",
+  Projects_FilterStage: "Stage",
   Projects_EmptyState: "No projects match your filters. Try adjusting them or",
   Projects_EmptyLink: "submit a new project",
 
@@ -51,6 +56,7 @@ export default {
   ProjectDetail_NotFound: "Project not found.",
   ProjectDetail_BrowseAll: "Browse all projects",
   ProjectDetail_Back: "← Back to Projects",
+  ProjectDetail_ContributorType: "Contributor Type",
   ProjectDetail_Votes: "Votes",
   ProjectDetail_Stage: "Stage",
   ProjectDetail_Category: "Category",
@@ -63,6 +69,7 @@ export default {
   Submit_Title: "Submit a Project",
   Submit_Subtitle: "Share your vision for a free and rebuilt Iran.",
   Submit_FieldTitle: "Title *",
+  Submit_FieldContributorType: "What best describes you? *",
   Submit_FieldDescription: "Description *",
   Submit_FieldCategory: "Category *",
   Submit_FieldStage: "Stage *",
@@ -73,6 +80,12 @@ export default {
   Submit_PlaceholderDescription: "Describe the project, its goals, and impact",
   Submit_PlaceholderAuthor: "Anonymous if left blank",
   Submit_Button: "Submit Project",
+
+  // Contributor Types
+  "contributor_Builder": "Builder (I execute and build products)",
+  "contributor_Technical": "Technical (engineer / developer)",
+  "contributor_Operator": "Operator (business / growth)",
+  "contributor_Investor / Supporter": "Investor / Supporter",
 
   // Categories
   "cat_🔓 Pre-Freedom": "🔓 Pre-Freedom",

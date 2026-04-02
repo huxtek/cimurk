@@ -30,8 +30,8 @@ export default function ProjectDetail() {
 
       <div className={styles.header}>
         <div className={styles.meta}>
-          <span className="tag-category">{project.category}</span>
-          <span className="tag-stage">{project.stage}</span>
+          <span className="tag-category">{t(`cat_${project.category}`)}</span>
+          <span className="tag-stage">{t(`stage_${project.stage}`)}</span>
         </div>
         <h1 className={styles.title}>{project.title}</h1>
         <p className={styles.desc}>{project.description}</p>
@@ -54,21 +54,27 @@ export default function ProjectDetail() {
             >▲</button>
           </div>
         </div>
+        {project.contributorType && (
+          <div className={styles.row}>
+            <span className={styles.label}>{t("ProjectDetail_ContributorType")}</span>
+            <span>{t(`contributor_${project.contributorType}`)}</span>
+          </div>
+        )}
         <div className={styles.row}>
           <span className={styles.label}>{t("ProjectDetail_Stage")}</span>
-          <span>{project.stage}</span>
+          <span>{t(`stage_${project.stage}`)}</span>
         </div>
         <div className={styles.row}>
           <span className={styles.label}>{t("ProjectDetail_Category")}</span>
-          <span>{project.category}</span>
+          <span>{t(`cat_${project.category}`)}</span>
         </div>
         <div className={styles.row}>
           <span className={styles.label}>{t("ProjectDetail_Timeline")}</span>
-          <span>{project.timeline}</span>
+          <span>{t(`timeline_${project.timeline}`)}</span>
         </div>
         <div className={styles.row}>
           <span className={styles.label}>{t("ProjectDetail_Budget")}</span>
-          <span>{project.budget}</span>
+          <span>{t(`budget_${project.budget}`)}</span>
         </div>
         <div className={styles.row}>
           <span className={styles.label}>{t("ProjectDetail_Created")}</span>

@@ -48,8 +48,8 @@ export default function Navbar() {
           <Link to={lp("/submit")} className={pathname === lp("/submit") ? "active" : ""}>
             {t("Navbar_Submit")}
           </Link>
-          <Link to={lp("/investors")} className={pathname.startsWith(lp("/investors")) ? "active" : ""}>
-            {t("Navbar_Investors")}
+          <Link to={lp("/partners")} className={pathname.startsWith(lp("/partners")) ? "active" : ""}>
+            {t("Navbar_Partners")}
           </Link>
           <button className={styles.langSwitch} onClick={switchLanguage}>
             {targetLabel}
@@ -94,8 +94,8 @@ export default function Navbar() {
           <Link to={lp("/submit")} onClick={closeDrawer} className={pathname === lp("/submit") ? "active" : ""}>
             {t("Navbar_Submit")}
           </Link>
-          <Link to={lp("/investors")} onClick={closeDrawer} className={pathname.startsWith(lp("/investors")) ? "active" : ""}>
-            {t("Navbar_Investors")}
+          <Link to={lp("/partners")} onClick={closeDrawer} className={pathname.startsWith(lp("/partners")) ? "active" : ""}>
+            {t("Navbar_Partners")}
           </Link>
         </div>
 

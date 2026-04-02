@@ -2,12 +2,18 @@
 
 .dropdown {
   position: relative;
+  width: 100%;
 }
 
 .toggle {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: $spacing-2;
+  white-space: nowrap;
+  font-size: $font-sm;
+  padding: $spacing-2 $spacing-4;
+  width: 100%;
 }
 
 .chevron {

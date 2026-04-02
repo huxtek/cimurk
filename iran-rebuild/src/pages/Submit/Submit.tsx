@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useProjects } from "../../context/ProjectContext";
 import { useLocalizedPath } from "../../hooks/useLocalizedPath";
-import { CATEGORIES, STAGES, TIMELINES, BUDGETS } from "../../types";
+import { CATEGORIES, STAGES, TIMELINES, BUDGETS, CONTRIBUTOR_TYPES } from "../../types";
 import styles from "./Submit.module.scss";
 
 export default function Submit() {
@@ -14,6 +14,7 @@ export default function Submit() {
   const lp = useLocalizedPath();
 
   const [title, setTitle] = useState("");
+  const [contributorType, setContributorType] = useState<string>(CONTRIBUTOR_TYPES[0]);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState<string>(CATEGORIES[0]);
   const [stage, setStage] = useState<string>(STAGES[0]);
@@ -27,6 +28,7 @@ export default function Submit() {
       title: title.trim(),
       description: description.trim(),
       category,
+      contributorType,
       stage,
       timeline,
       budget,
@@ -44,6 +46,15 @@ export default function Submit() {
         <label>
           {t("Submit_FieldTitle")}
           <input type="text" required value={title} onChange={(e) => setTitle(e.target.value)} placeholder={t("Submit_PlaceholderTitle")} />
+        </label>
+
+        <label>
+          {t("Submit_FieldContributorType")}
+          <select required value={contributorType} onChange={(e) => setContributorType(e.target.value)}>
+            {CONTRIBUTOR_TYPES.map((ct) => (
+              <option key={ct} value={ct}>{t(`contributor_${ct}`)}</option>
+            ))}
+          </select>
         </label>
 
         <label>

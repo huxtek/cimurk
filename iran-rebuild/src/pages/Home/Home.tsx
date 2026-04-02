@@ -2,14 +2,14 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useProjects } from "../../context/ProjectContext";
-import { useInvestors } from "../../context/InvestorContext";
+import { usePartners } from "../../context/PartnerContext";
 import { useLocalizedPath } from "../../hooks/useLocalizedPath";
 import { CATEGORIES } from "../../types";
 import styles from "./Home.module.scss";
 
 export default function Home() {
   const { projects } = useProjects();
-  const { investors } = useInvestors();
+  const { partners } = usePartners();
   const { t } = useTranslation();
   const lp = useLocalizedPath();
 
@@ -84,22 +84,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.investorsSection}>
-        <h2>{t("Home_TopInvestors")}</h2>
-        <p className={styles.sectionSub}>{t("Home_TopInvestorsSub")}</p>
+      <section className={styles.partnersSection}>
+        <h2>{t("Home_TopPartners")}</h2>
+        <p className={styles.sectionSub}>{t("Home_TopPartnersSub")}</p>
         <div className={styles.marqueeWrap}>
           <div className={styles.marquee}>
-            {[...investors, ...investors].map((inv, i) => (
-              <div key={`${inv.id}-${i}`} className={styles.investorChip}>
-                <img src={inv.logo} alt={inv.name} className={styles.investorLogo} />
-                <span className={styles.investorName}>{inv.name}</span>
+            {[...partners, ...partners].map((partner, i) => (
+              <div key={`${partner.id}-${i}`} className={styles.partnerChip}>
+                <img src={partner.logo} alt={partner.name} className={styles.partnerLogo} />
+                <span className={styles.partnerName}>{partner.name}</span>
               </div>
             ))}
           </div>
         </div>
         <div className={styles.seeAll}>
-          <Link to={lp("/investors")} className="btn btn-outline">
-            {t("Home_ViewAllInvestors")}
+          <Link to={lp("/partners")} className="btn btn-outline">
+            {t("Home_ViewAllPartners")}
           </Link>
         </div>
       </section>

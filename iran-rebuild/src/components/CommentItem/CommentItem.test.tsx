@@ -12,6 +12,7 @@ const mockComment: Comment = {
   authorName: "Jane Doe",
   authorEmail: "jane@example.com",
   text: "This is a great project!",
+  votes: 0,
   createdAt: new Date().toISOString(),
 };
 
@@ -22,6 +23,7 @@ const mockReply: Comment = {
   authorName: "John Smith",
   authorEmail: "john@example.com",
   text: "I agree!",
+  votes: 0,
   createdAt: new Date().toISOString(),
 };
 

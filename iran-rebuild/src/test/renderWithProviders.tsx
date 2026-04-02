@@ -3,7 +3,7 @@ import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import { ProjectProvider } from "../context/ProjectContext";
 import { CommentProvider } from "../context/CommentContext";
-import { InvestorProvider } from "../context/InvestorContext";
+import { PartnerProvider } from "../context/PartnerContext";
 import type { ReactNode } from "react";
 
 interface Options {
@@ -16,12 +16,12 @@ export function renderWithProviders(ui: ReactNode, { route = "/" }: Options = {}
       <AuthProvider>
         <ProjectProvider>
           <CommentProvider>
-            <InvestorProvider>
+            <PartnerProvider>
               <Routes>
                 <Route path="/fa/*" element={ui} />
                 <Route path="/*" element={ui} />
               </Routes>
-            </InvestorProvider>
+            </PartnerProvider>
           </CommentProvider>
         </ProjectProvider>
       </AuthProvider>

@@ -7,7 +7,7 @@ export default {
   Navbar_Home: "خانه",
   Navbar_Projects: "پروژه‌ها",
   Navbar_Submit: "+ ارسال",
-  Navbar_Investors: "سرمایه‌گذاران",
+  Navbar_Partners: "شرکا",
   Navbar_SignIn: "ورود",
 
   // Footer
@@ -29,21 +29,26 @@ export default {
   Home_TopProjects: "پروژه‌های برتر",
   Home_TopProjectsSub: "پروژه‌های با بیشترین رأی از جامعه",
   Home_ViewAll: "← مشاهده همه پروژه‌ها",
-  Home_TopInvestors: "سرمایه‌گذاران",
-  Home_TopInvestorsSub: "حمایت‌شده توسط شرکای آینده‌نگر",
-  Home_ViewAllInvestors: "← مشاهده همه سرمایه‌گذاران",
+  Home_TopPartners: "شرکا",
+  Home_TopPartnersSub: "حمایت‌شده توسط شرکای آینده‌نگر",
+  Home_ViewAllPartners: "← مشاهده همه شرکا",
 
-  // Investors
-  Investors_Title: "همه سرمایه‌گذاران",
-  Investors_Subtitle: "شرکایی که از پروژه‌های آینده‌ساز ایران حمایت می‌کنند",
-  Investors_Projects: "پروژه حمایت‌شده",
+  // Partners
+  Partners_Title: "همه شرکا",
+  Partners_Subtitle: "شرکایی که از پروژه‌های آینده‌ساز ایران حمایت می‌کنند",
+  Partners_Projects: "پروژه حمایت‌شده",
+
+  // Filters
+  Filter_All: "همه",
 
   // Projects
   Projects_Title: "همه پروژه‌ها",
   Projects_Subtitle: "مرتب‌شده بر اساس رأی — کشف، بررسی و حمایت",
+  Projects_Filters: "فیلترها",
   Projects_FilterCategories: "دسته‌بندی‌ها",
   Projects_FilterTimeline: "زمان‌بندی",
   Projects_FilterBudget: "بودجه",
+  Projects_FilterStage: "مرحله",
   Projects_EmptyState: "هیچ پروژه‌ای با فیلترهای شما مطابقت ندارد. فیلترها را تغییر دهید یا",
   Projects_EmptyLink: "پروژه جدید ارسال کنید",
 
@@ -51,6 +56,7 @@ export default {
   ProjectDetail_NotFound: "پروژه یافت نشد.",
   ProjectDetail_BrowseAll: "مرور همه پروژه‌ها",
   ProjectDetail_Back: "→ بازگشت به پروژه‌ها",
+  ProjectDetail_ContributorType: "نوع مشارکت‌کننده",
   ProjectDetail_Votes: "آرا",
   ProjectDetail_Stage: "مرحله",
   ProjectDetail_Category: "دسته‌بندی",
@@ -63,6 +69,7 @@ export default {
   Submit_Title: "ارسال پروژه",
   Submit_Subtitle: "چشم‌انداز خود را برای ایران آزاد و بازسازی‌شده به اشتراک بگذارید.",
   Submit_FieldTitle: "عنوان *",
+  Submit_FieldContributorType: "بهترین توصیف شما چیست؟ *",
   Submit_FieldDescription: "توضیحات *",
   Submit_FieldCategory: "دسته‌بندی *",
   Submit_FieldStage: "مرحله *",
@@ -73,6 +80,12 @@ export default {
   Submit_PlaceholderDescription: "پروژه، اهداف و تأثیر آن را توضیح دهید",
   Submit_PlaceholderAuthor: "در صورت خالی بودن، ناشناس",
   Submit_Button: "ارسال پروژه",
+
+  // Contributor Types
+  "contributor_Builder": "سازنده (اجرا و ساخت محصول)",
+  "contributor_Technical": "فنی (مهندس / توسعه‌دهنده)",
+  "contributor_Operator": "اپراتور (کسب‌وکار / رشد)",
+  "contributor_Investor / Supporter": "سرمایه‌گذار / حامی",
 
   // Categories
   "cat_🔓 Pre-Freedom": "🔓 پیش از آزادی",

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import type { Project } from "../../types";
 import { useProjects } from "../../context/ProjectContext";
 import { useLocalizedPath } from "../../hooks/useLocalizedPath";
@@ -13,6 +14,7 @@ export default function ProjectCard({ project, variant = "full" }: Props) {
   const { vote, userVotes } = useProjects();
   const navigate = useNavigate();
   const lp = useLocalizedPath();
+  const { t } = useTranslation();
   const userVote = userVotes[project.id] || 0;
 
   return (
@@ -48,8 +50,8 @@ export default function ProjectCard({ project, variant = "full" }: Props) {
       </div>
       <div className={styles.body}>
         <div className={styles.meta}>
-          <span className="tag-category">{project.category}</span>
-          <span className="tag-stage">{project.stage}</span>
+          <span className="tag-category">{t(`cat_${project.category}`)}</span>
+          <span className="tag-stage">{t(`stage_${project.stage}`)}</span>
         </div>
         <h3 className={styles.title}>{project.title}</h3>
         <p className={styles.desc}>{project.description}</p>

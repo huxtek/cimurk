@@ -1,9 +1,9 @@
-import type { Investor } from "../types";
+import type { Partner } from "../types";
 
 const logo = (domain: string) =>
   `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
 
-export const seedInvestors: Investor[] = [
+export const seedPartners: Partner[] = [
   {
     id: "inv-1",
     name: "Y Combinator",
