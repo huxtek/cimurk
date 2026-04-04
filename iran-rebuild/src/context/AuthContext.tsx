@@ -1,5 +1,11 @@
-import { createContext, useContext, useState, useCallback } from "react";
+import { createContext, useContext, useEffect, useState, useCallback } from "react";
 import type { ReactNode } from "react";
+import {
+  onAuthStateChanged,
+  signInWithPopup,
+  signOut as firebaseSignOut,
+} from "firebase/auth";
+import { auth, googleProvider } from "../firebase";
 import type { User } from "../types";
 
 interface AuthContextValue {
@@ -10,21 +16,40 @@ interface AuthContextValue {
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
-const MOCK_USER: User = {
-  name: "Kian Ahmadi",
-  email: "kian.ahmadi@gmail.com",
-  avatar: "https://ui-avatars.com/api/?name=Kian+Ahmadi&background=6c63ff&color=fff&size=80",
-};
-
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
 
-  const signIn = useCallback(() => {
-    setUser(MOCK_USER);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        setUser({
+          name: firebaseUser.displayName ?? "Anonymous",
+          email: firebaseUser.email ?? "",
+          avatar:
+            firebaseUser.photoURL ??
+            `https://ui-avatars.com/api/?name=${encodeURIComponent(firebaseUser.displayName ?? "U")}&background=6c63ff&color=fff&size=80`,
+        });
+      } else {
+        setUser(null);
+      }
+    });
+    return unsubscribe;
   }, []);
 
-  const signOut = useCallback(() => {
-    setUser(null);
+  const signIn = useCallback(async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (err) {
+      console.error("Sign-in error:", err);
+    }
+  }, []);
+
+  const signOut = useCallback(async () => {
+    try {
+      await firebaseSignOut(auth);
+    } catch (err) {
+      console.error("Sign-out error:", err);
+    }
   }, []);
 
   return (
