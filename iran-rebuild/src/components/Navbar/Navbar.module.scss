@@ -257,3 +257,92 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+// ---- User Popover ----
+.userWrap {
+  position: relative;
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + $spacing-2);
+  inset-inline-end: 0;
+  background: $bg-card;
+  border: 1px solid $border-light;
+  border-radius: $radius-md;
+  padding: $spacing-2;
+  min-width: 140px;
+  z-index: 200;
+  box-shadow: $shadow-md;
+}
+
+.signOutBtn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: $red;
+  font-size: $font-sm;
+  font-weight: $font-medium;
+  padding: $spacing-2 $spacing-3;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  text-align: start;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $red-glow;
+  }
+}
+
+// ---- Sign Out Modal ----
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 400;
+  animation: fadeIn 0.15s ease;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: $bg-elevated;
+  border: 1px solid $border-light;
+  border-radius: $radius-lg;
+  padding: $spacing-8;
+  z-index: 500;
+  width: min(400px, 90vw);
+  box-shadow: $shadow-lg;
+  animation: fadeIn 0.15s ease;
+}
+
+.modalText {
+  font-size: $font-md;
+  color: $text;
+  margin-bottom: $spacing-6;
+  line-height: 1.5;
+}
+
+.modalActions {
+  display: flex;
+  gap: $spacing-3;
+  justify-content: flex-end;
+}
+
+.modalSignOut {
+  background: $red;
+  color: #fff;
+  border: none;
+  border-radius: $radius-full;
+  padding: $spacing-2 $spacing-5;
+  font-size: $font-sm;
+  font-weight: $font-semibold;
+  cursor: pointer;
+  transition: opacity $transition-fast;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}

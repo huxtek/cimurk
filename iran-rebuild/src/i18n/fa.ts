@@ -9,6 +9,9 @@ export default {
   Navbar_Submit: "+ ارسال",
   Navbar_Partners: "شرکا",
   Navbar_SignIn: "ورود",
+  Navbar_SignOut: "خروج",
+  Navbar_SignOutConfirm: "آیا مطمئن هستید که می‌خواهید خارج شوید؟",
+  Navbar_Cancel: "لغو",
 
   // Footer
   Footer_Brand: "Cimurk",

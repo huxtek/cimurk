@@ -9,6 +9,9 @@ export default {
   Navbar_Submit: "+ Submit",
   Navbar_Partners: "Partners",
   Navbar_SignIn: "Sign In",
+  Navbar_SignOut: "Sign Out",
+  Navbar_SignOutConfirm: "Are you sure you want to sign out?",
+  Navbar_Cancel: "Cancel",
 
   // Footer
   Footer_Brand: "Cimurk",
