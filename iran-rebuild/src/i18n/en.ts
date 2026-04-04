@@ -80,6 +80,10 @@ export default {
   Submit_PlaceholderDescription: "Describe the project, its goals, and impact",
   Submit_PlaceholderAuthor: "Anonymous if left blank",
   Submit_Button: "Submit Project",
+  Submit_Submitting: "Submitting...",
+  Submit_Success: "Your project has been submitted and is pending review. We'll make it public once approved.",
+  Submit_ViewProjects: "View Projects",
+  Submit_Error: "Something went wrong. Please try again.",
 
   // Contributor Types
   "contributor_Builder": "Builder (I execute and build products)",

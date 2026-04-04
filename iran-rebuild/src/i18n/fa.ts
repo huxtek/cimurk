@@ -80,6 +80,10 @@ export default {
   Submit_PlaceholderDescription: "پروژه، اهداف و تأثیر آن را توضیح دهید",
   Submit_PlaceholderAuthor: "در صورت خالی بودن، ناشناس",
   Submit_Button: "ارسال پروژه",
+  Submit_Submitting: "در حال ارسال...",
+  Submit_Success: "پروژه شما ارسال شد و در انتظار بررسی است. پس از تأیید، عمومی خواهد شد.",
+  Submit_ViewProjects: "مشاهده پروژه‌ها",
+  Submit_Error: "مشکلی پیش آمد. لطفاً دوباره تلاش کنید.",
 
   // Contributor Types
   "contributor_Builder": "سازنده (اجرا و ساخت محصول)",

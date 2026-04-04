@@ -9,7 +9,7 @@ import { CATEGORIES, TIMELINES, BUDGETS, STAGES } from "../../types";
 import styles from "./Projects.module.scss";
 
 export default function Projects() {
-  const { projects } = useProjects();
+  const { projects, loading } = useProjects();
   const { t } = useTranslation();
   const lp = useLocalizedPath();
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(() => new Set<string>(Array.from(CATEGORIES)));
@@ -44,7 +44,9 @@ export default function Projects() {
         </div>
       </div>
 
-      {filtered.length === 0 ? (
+      {loading ? (
+        <p className={styles.empty}>{t("App_Loading")}</p>
+      ) : filtered.length === 0 ? (
         <p className={styles.empty}>
           {t("Projects_EmptyState")}{" "}
           <Link to={lp("/submit")}>{t("Projects_EmptyLink")}</Link>!

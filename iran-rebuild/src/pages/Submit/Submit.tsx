@@ -21,20 +21,31 @@ export default function Submit() {
   const [timeline, setTimeline] = useState<string>(TIMELINES[0]);
   const [budget, setBudget] = useState<string>(BUDGETS[0]);
   const [author, setAuthor] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    addProject({
-      title: title.trim(),
-      description: description.trim(),
-      category,
-      contributorType,
-      stage,
-      timeline,
-      budget,
-      author: author.trim() || undefined,
-    });
-    navigate(lp("/"));
+    setSubmitting(true);
+    setError(null);
+    try {
+      await addProject({
+        title: title.trim(),
+        description: description.trim(),
+        category,
+        contributorType,
+        stage,
+        timeline,
+        budget,
+        author: author.trim() || undefined,
+      });
+      setSubmitted(true);
+    } catch {
+      setError(t("Submit_Error"));
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -42,7 +53,15 @@ export default function Submit() {
       <h2>{t("Submit_Title")}</h2>
       <p className={styles.sub}>{t("Submit_Subtitle")}</p>
 
-      <form onSubmit={handleSubmit} className={styles.form}>
+      {submitted ? (
+        <div className={styles.success}>
+          <p>{t("Submit_Success")}</p>
+          <button className="btn btn-outline" onClick={() => navigate(lp("/projects"))}>
+            {t("Submit_ViewProjects")}
+          </button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className={styles.form}>
         <label>
           {t("Submit_FieldTitle")}
           <input type="text" required value={title} onChange={(e) => setTitle(e.target.value)} placeholder={t("Submit_PlaceholderTitle")} />
@@ -97,10 +116,12 @@ export default function Submit() {
           <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} placeholder={t("Submit_PlaceholderAuthor")} />
         </label>
 
-        <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-          {t("Submit_Button")}
-        </button>
-      </form>
+        <button type="submit" className={`btn btn-primary ${styles.submitBtn}`} disabled={submitting}>
+            {submitting ? t("Submit_Submitting") : t("Submit_Button")}
+          </button>
+          {error && <p className={styles.error}>{error}</p>}
+        </form>
+      )}
     </section>
   );
 }

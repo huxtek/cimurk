@@ -26,6 +26,7 @@ export interface Project {
   budget: string;
   author?: string;
   votes: number;
+  status?: string;
   createdAt: string;
 }
 
